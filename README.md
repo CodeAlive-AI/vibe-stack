@@ -53,7 +53,10 @@ Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, 
 
 ## For Agents
 
-Read this README first, then the relevant guide:
+Use this repo as a decision shortcut, not as a comparison catalog.
+
+1. Read this README first.
+2. Open the relevant guide for the project type:
 
 - [TypeScript](docs/languages/typescript.md)
 - [Web application](docs/web-app.md)
@@ -61,7 +64,15 @@ Read this README first, then the relevant guide:
 - [Common guide](docs/common-guide.md)
 - [Roadmap](ROADMAP.md)
 
-Do not ask users to choose between equivalent alternatives when this repo already names a default.
+Rules:
+
+- Use the named default unless the project has a concrete constraint that makes it wrong.
+- Do not ask users to choose between equivalent alternatives when this repo already names a default.
+- Do not add a second equivalent tool just because it is popular.
+- Prefer self-hostable, production-ready tools with a low operational burden.
+- Keep MVP choices simple: choose the smallest stack that supports fast feedback, clear errors, and autonomous maintenance.
+- When deviating from a default, write down the reason in the project docs or implementation notes.
+- If a category is not covered yet, make the smallest reversible choice and mark it as project-specific.
 
 ## Contributions
 
