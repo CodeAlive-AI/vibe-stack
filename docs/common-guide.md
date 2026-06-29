@@ -48,7 +48,7 @@ Borrow only the useful part of 12-Factor:
 - Put config and secrets outside the code.
 - Validate config on startup.
 - Keep dependencies explicit.
-- Use PostgreSQL, Bugsink, SigNoz, and other services as attached resources.
+- Connect external services through configuration, not hardcoded values.
 - Keep durable state out of the local filesystem.
 - Make logs, errors, traces, and metrics visible.
 - Run migrations and maintenance as explicit commands.
@@ -83,8 +83,8 @@ Names can differ by project. The important part is that an agent can find and ru
 
 For an MVP, observability should answer:
 
-- Did it crash? Use Bugsink.
-- Is it slow or broken in production? Use SigNoz with OpenTelemetry.
+- Did it crash?
+- Is it slow or broken in production?
 - Did the last deploy make things worse? Compare deploy time with errors, traces, metrics, and logs.
 
 Do not build a full SRE program before the product has that level of risk.
