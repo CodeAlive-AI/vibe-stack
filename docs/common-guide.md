@@ -27,6 +27,8 @@ Agents should not sweep problems under the rug.
 - Fail startup when required config, dependencies, or services are invalid.
 - Keep fallback behavior rare, explicit, tested, and visible.
 - Do not hide broken production behavior behind a default value.
+- Use strict typing everywhere the language and framework allow it.
+- Cover core logic with unit tests and important runtime boundaries with integration tests.
 - Make the shortest useful verification loop easy to run after every change.
 
 ## Minimum Agent-Ready Contract
