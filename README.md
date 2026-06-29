@@ -64,4 +64,4 @@ Do not ask users to choose between equivalent alternatives when this repo alread
 
 Pull requests are welcome for better recommended defaults across languages, app types, infrastructure, observability, auth, deployment, and templates.
 
-The bar is intentionally high: recommendations should stay small, useful, proven, production-ready, and self-hosted first whenever possible. See [CONTRIBUTION.md](CONTRIBUTION.md).
+The bar is intentionally high: recommendations should stay small, useful, proven, production-ready, and self-hosted first whenever possible. See [CONTRIBUTING.md](CONTRIBUTING.md).
