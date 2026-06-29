@@ -12,6 +12,7 @@ This is the current default for AI-native web apps: product apps, dashboards, in
 | React | UI runtime |
 | Next.js | App framework |
 | Mastra | Agent workflows and agent features |
+| Better Auth | Authentication |
 | Mantine | UI kit |
 | Tailwind CSS v4 | Styling |
 | Ultracite | Linting and formatting preset |
@@ -25,9 +26,11 @@ When starting a new web app:
 2. Add Mantine for UI.
 3. Add Tailwind CSS v4 for styling.
 4. Add Mastra when the app needs agent workflows, tools, memory, or model orchestration.
-5. Add Ultracite for linting and formatting.
-6. Add Motion only when the UI needs animation.
-7. Use Vibe Infra when the app needs deployment, database, error tracking, and observability defaults.
+5. Add Better Auth when the app needs users, sessions, social login, organizations, 2FA, passkeys, or other auth features.
+6. Use PostgreSQL from Vibe Infra as the default Better Auth database.
+7. Add Ultracite for linting and formatting.
+8. Add Motion only when the UI needs animation.
+9. Use Vibe Infra when the app needs deployment, database, error tracking, and observability defaults.
 
 ## Boundary
 

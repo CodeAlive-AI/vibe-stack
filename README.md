@@ -25,6 +25,7 @@ Use this for a new AI-native web application:
 | UI runtime | React |
 | App framework | Next.js |
 | Agent features | Mastra |
+| Authentication | Better Auth |
 | UI kit | Mantine |
 | Styling | Tailwind CSS v4 |
 | Code quality | TypeScript strict mode + Ultracite |
@@ -81,6 +82,7 @@ The initial stack was checked against official project pages and docs on 2026-06
 - [Motion](https://motion.dev/)
 - [Ultracite](https://www.ultracite.ai/)
 - [Mastra](https://mastra.ai/)
+- [Better Auth](https://www.better-auth.com/docs)
 - [PostgreSQL](https://www.postgresql.org/docs/)
 - [Dokploy](https://dokploy.com/)
 - [Bugsink](https://github.com/bugsink/bugsink)

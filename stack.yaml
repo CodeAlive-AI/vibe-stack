@@ -25,6 +25,7 @@ languages:
       - React
       - Next.js
       - Mastra
+      - Better Auth
       - Mantine
       - Tailwind CSS v4
       - Ultracite
@@ -45,6 +46,10 @@ scenarios:
       ui_runtime: React
       app_framework: Next.js
       agent_features: Mastra
+      authentication:
+        choice: Better Auth
+        hosting: self_hosted_in_app
+        database: PostgreSQL
       ui_kit: Mantine
       styling: Tailwind CSS v4
       quality: TypeScript strict mode + Ultracite
@@ -80,6 +85,7 @@ sources:
   motion: https://motion.dev/
   ultracite: https://www.ultracite.ai/
   mastra: https://mastra.ai/
+  better_auth: https://www.better-auth.com/docs
   postgresql: https://www.postgresql.org/docs/
   dokploy: https://dokploy.com/
   bugsink: https://github.com/bugsink/bugsink
