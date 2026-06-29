@@ -18,6 +18,8 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | UI | React + Next.js |
 | Agents | Mastra |
 | Auth | Better Auth |
+| Data access | Prisma + PostgreSQL |
+| Validation | Zod |
 | Components | Mantine |
 | Styling | Tailwind CSS v4 |
 | Quality | TypeScript strict mode + Ultracite + Oxlint |
