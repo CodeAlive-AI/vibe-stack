@@ -33,7 +33,6 @@ A recommendation should be:
 
 Update only what is needed:
 
-- `stack.yaml` for machine-readable defaults.
 - The relevant guide in `docs/`.
 - `README.md` only when the top-level default or coverage changes.
 - `templates/` only when adding a starter template.

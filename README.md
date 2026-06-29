@@ -46,7 +46,7 @@ SigNoz is based on OpenTelemetry and is the default place for traces, metrics, a
 
 ## For Agents
 
-Read [stack.yaml](stack.yaml) first, then the relevant guide:
+Read this README first, then the relevant guide:
 
 - [TypeScript](docs/languages/typescript.md)
 - [Web application](docs/web-app.md)
