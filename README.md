@@ -21,6 +21,7 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | Auth | Better Auth |
 | Data access | Prisma + PostgreSQL |
 | Validation | Zod |
+| Logging | Pino JSON logs to stdout |
 | Components | Mantine |
 | Styling | Tailwind CSS v4 |
 | Quality | TypeScript strict mode + Ultracite + Oxlint |
@@ -33,9 +34,10 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | Deployment | Dokploy | Vercel-style hosted deployment |
 | Database | PostgreSQL | Supabase-style managed Postgres platform |
 | Error tracking | Bugsink | Sentry; compatible with Sentry SDKs |
-| Observability | SigNoz | Grafana-style observability stack |
+| MVP observability | Structured stdout/stderr logs via Docker/Dokploy | Heavy log platforms too early |
+| MVP+ observability | OpenTelemetry + SigNoz | Grafana-style observability stack |
 
-SigNoz is based on OpenTelemetry and is the default place for traces, metrics, and logs.
+Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, metrics, retention, and correlation become worth the extra resources.
 
 ## Coverage
 

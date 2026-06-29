@@ -17,6 +17,7 @@ Use this when the project is a web application:
 | Authentication | Better Auth |
 | Data access | Prisma + PostgreSQL |
 | Validation | Zod |
+| Logging | Pino JSON logs to stdout |
 | UI kit | Mantine |
 | Styling | Tailwind CSS v4 |
 | Code quality | TypeScript strict mode + Ultracite + Oxlint |
@@ -28,7 +29,7 @@ Vibe Stack does not yet define a separate TypeScript backend-only stack. For now
 
 Better Auth is the default auth choice for TypeScript web apps because it lives inside the application, is framework-agnostic, and supports PostgreSQL.
 
-Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation.
+Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation. Pino is the default logger because it produces fast structured JSON logs that Docker and later log collectors can consume.
 
 ## Not The Default
 
