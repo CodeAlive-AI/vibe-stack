@@ -10,7 +10,7 @@ Vibe Infra is the default language-independent infrastructure stack for Vibe Sta
 | --- | --- | --- |
 | Dokploy | Deployment platform | Vercel-style hosted deployment |
 | PostgreSQL | Primary database | Supabase-style managed Postgres platform |
-| Bugsink | Error tracking | Sentry |
+| Bugsink | Error tracking compatible with Sentry SDKs | Sentry |
 | SigNoz | Observability based on OpenTelemetry | Grafana-style observability stack |
 
 ## What Each Choice Means
@@ -19,7 +19,7 @@ Dokploy is the default when a project needs a practical self-hosted deployment p
 
 PostgreSQL is the default database. Supabase can still be useful as a hosted product, but Vibe Infra starts from the database itself so the deployment model stays portable.
 
-Bugsink is the default error tracking tool when the project wants a self-hosted Sentry-compatible path.
+Bugsink is the default error tracking tool when the project wants a self-hosted Sentry-compatible path. It is compatible with Sentry SDKs, so applications can keep using standard Sentry client instrumentation while sending events to Bugsink.
 
 SigNoz is the default observability tool. It is based on OpenTelemetry and should receive traces, metrics, and logs.
 

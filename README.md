@@ -43,7 +43,7 @@ Use this for deployment, database, error tracking, and observability:
 | --- | --- | --- |
 | Deployment platform | Dokploy | Vercel-style hosted deployment |
 | Database | PostgreSQL | Supabase-style managed Postgres platform |
-| Error tracking | Bugsink | Sentry |
+| Error tracking | Bugsink | Sentry, compatible with Sentry SDKs |
 | Observability | SigNoz | Grafana-style observability stack |
 
 SigNoz is based on OpenTelemetry and is the default place for traces, metrics, and logs.

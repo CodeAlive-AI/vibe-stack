@@ -75,6 +75,8 @@ scenarios:
       error_tracking:
         choice: Bugsink
         alternative_to: Sentry
+        compatible_with:
+          - Sentry SDKs
       observability:
         choice: SigNoz
         alternative_to: Grafana-style observability stack
