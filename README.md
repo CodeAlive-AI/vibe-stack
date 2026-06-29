@@ -1,5 +1,7 @@
 # Vibe Stack
 
+![Vibe Stack cover](assets/vibe-stack-cover.png)
+
 **The optimal default stack for AI-native products.**
 
 Vibe Stack is an opinionated gentleman's kit: a curated set of self-hostable, production-ready technologies that covers the common 95% of product use cases without forcing teams or agents to compare equivalent alternatives.
