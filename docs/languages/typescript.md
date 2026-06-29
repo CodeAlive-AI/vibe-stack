@@ -32,7 +32,7 @@ assistant-ui is the default AI UI layer for chat, assistant, copilot, and agent-
 
 Better Auth is the default auth choice for TypeScript web apps because it lives inside the application, is framework-agnostic, and supports PostgreSQL.
 
-Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation. Pino is the default logger because it produces fast structured JSON logs that Docker and later log collectors can consume.
+Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Keep stable entities and relations in the Prisma schema, and use PostgreSQL `jsonb` only for unstable metadata, provider payloads, and experimental fields. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation. Pino is the default logger because it produces fast structured JSON logs that Docker and later log collectors can consume.
 
 LogLayer can be added later when the project needs a logger abstraction over Pino and other transports. It is not the default MVP choice because direct Pino is simpler.
 

@@ -50,6 +50,8 @@ Ultracite supports multiple toolchains. Vibe Stack's default is Ultracite with O
 
 Create T3 App is a useful reference for full-stack TypeScript defaults. Vibe Stack borrows the emphasis on type safety, Prisma, and Zod, but does not make tRPC or NextAuth.js defaults yet: Better Auth owns auth, and the API boundary remains project-specific until a single stronger default is selected.
 
+PostgreSQL + Prisma should be used as a structured core with flexible edges. Model stable entities, relations, uniqueness, and timestamps in Prisma; use PostgreSQL `jsonb` for unstable metadata, provider payloads, and experimental fields. Do not use `jsonb` as a substitute for the whole product model.
+
 assistant-ui is the default AI UI layer for chat, assistant, copilot, and agent-facing interfaces. Use it with Mastra when the product needs a production-ready agent UI instead of building chat primitives from scratch.
 
 Sources: [Create T3 App](https://create.t3.gg/), [pnpm](https://pnpm.io/), [assistant-ui](https://www.assistant-ui.com/), [assistant-ui Mastra integration](https://www.assistant-ui.com/docs/integrations/frameworks/mastra/overview), [Prisma](https://www.prisma.io/docs), [Zod](https://zod.dev/), [Pino](https://getpino.io/).

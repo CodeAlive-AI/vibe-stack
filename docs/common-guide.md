@@ -55,6 +55,16 @@ Borrow only the useful part of 12-Factor:
 
 This is enough for most MVPs. Do not add Kubernetes, service mesh, complex release machinery, or heavy compliance process unless the product actually needs it.
 
+## Data Modeling
+
+Keep the data model explicit, but do not overdesign it upfront.
+
+- Model core product entities, relationships, unique constraints, and timestamps in the database schema.
+- Keep migrations small, reviewable, and easy for agents to verify.
+- Use flexible document fields such as PostgreSQL `jsonb` for unstable edges: provider payloads, metadata, experimental settings, and data whose shape is still changing.
+- Do not replace the whole domain model with `jsonb`; hidden structure makes autonomous maintenance harder.
+- Treat destructive schema changes as risky changes that need an explicit verification path.
+
 ## Config Validation
 
 Validate all required configuration values when the app starts.
