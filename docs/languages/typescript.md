@@ -10,6 +10,7 @@ Use this when the project is a web application:
 
 | Need | Choice |
 | --- | --- |
+| Package manager | pnpm |
 | UI runtime | React |
 | App framework | Next.js |
 | Agent workflows | Mastra |

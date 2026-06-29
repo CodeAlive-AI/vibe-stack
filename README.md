@@ -15,6 +15,7 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | Need | Default |
 | --- | --- |
 | Language | TypeScript |
+| Package manager | pnpm |
 | UI | React + Next.js |
 | Agents | Mastra |
 | Auth | Better Auth |
