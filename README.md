@@ -18,6 +18,7 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | Package manager | pnpm |
 | UI | React + Next.js |
 | Agents | Mastra |
+| AI UI layer | assistant-ui |
 | Auth | Better Auth |
 | Data access | Prisma + PostgreSQL |
 | Validation | Zod |

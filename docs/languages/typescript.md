@@ -14,6 +14,7 @@ Use this when the project is a web application:
 | UI runtime | React |
 | App framework | Next.js |
 | Agent workflows | Mastra |
+| AI UI layer | assistant-ui |
 | Authentication | Better Auth |
 | Data access | Prisma + PostgreSQL |
 | Validation | Zod |
@@ -26,6 +27,8 @@ Use this when the project is a web application:
 ## Current Boundary
 
 Vibe Stack does not yet define a separate TypeScript backend-only stack. For now, backend choices are project-specific unless the work fits naturally inside the Next.js application.
+
+assistant-ui is the default AI UI layer for chat, assistant, copilot, and agent-facing interfaces. Mastra owns agent logic; assistant-ui owns the React UI primitives and state layer for talking to those agents.
 
 Better Auth is the default auth choice for TypeScript web apps because it lives inside the application, is framework-agnostic, and supports PostgreSQL.
 
