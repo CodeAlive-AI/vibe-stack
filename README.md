@@ -10,7 +10,7 @@ This repo is not an awesome-list. It is a small knowledge base that a human or c
 | --- | --- | --- |
 | TypeScript | Covered for web applications | [docs/languages/typescript.md](docs/languages/typescript.md) |
 | Web application | Covered | [docs/web-app.md](docs/web-app.md) |
-| Vibe Deploy | Covered | [docs/vibe-deploy.md](docs/vibe-deploy.md) |
+| Vibe Infra | Covered | [docs/vibe-infra.md](docs/vibe-infra.md) |
 | Python | Planned | Not selected yet |
 | .NET | Planned | Not selected yet |
 | Backend-only stacks | Planned | Not selected yet |
@@ -32,16 +32,18 @@ Use this for a new AI-native web application:
 
 Radix UI is not the default. Use it only when Mantine cannot cover a required primitive.
 
-## Recommended Deploy Stack
+## Recommended Infra Stack
 
-Use this for deployment:
+Use this for deployment, database, error tracking, and observability:
 
-| Need | Choice |
-| --- | --- |
-| Deployment platform | Dokploy |
-| Database | PostgreSQL |
-| Error tracking | Bugsink |
-| Observability | SigNoz |
+| Need | Choice | Alternative to |
+| --- | --- | --- |
+| Deployment platform | Dokploy | Vercel-style hosted deployment |
+| Database | PostgreSQL | Supabase-style managed Postgres platform |
+| Error tracking | Bugsink | Sentry |
+| Observability | SigNoz | Grafana-style observability stack |
+
+SigNoz is based on OpenTelemetry and is the default place for traces, metrics, and logs.
 
 ## Repository Structure
 
@@ -53,7 +55,7 @@ vibe-stack/
 │   ├── languages/
 │   │   └── typescript.md
 │   ├── web-app.md
-│   └── vibe-deploy.md
+│   └── vibe-infra.md
 └── templates/
     └── README.md
 ```
@@ -83,3 +85,4 @@ The initial stack was checked against official project pages and docs on 2026-06
 - [Dokploy](https://dokploy.com/)
 - [Bugsink](https://github.com/bugsink/bugsink)
 - [SigNoz](https://signoz.io/docs/)
+- [OpenTelemetry](https://opentelemetry.io/docs/)

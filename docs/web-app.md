@@ -27,7 +27,7 @@ When starting a new web app:
 4. Add Mastra when the app needs agent workflows, tools, memory, or model orchestration.
 5. Add Ultracite for linting and formatting.
 6. Add Motion only when the UI needs animation.
-7. Use Vibe Deploy when the app needs a deployment profile.
+7. Use Vibe Infra when the app needs deployment, database, error tracking, and observability defaults.
 
 ## Boundary
 
