@@ -34,6 +34,38 @@ When preparing infrastructure:
 5. Keep secrets in the deployment platform or host secret store. Do not commit them.
 6. Document deploy, rollback, backup, and restore commands in the project README.
 
+## Minimal Requirements
+
+These are starting points for a strong MVP, not capacity guarantees. Real requirements depend on traffic, build strategy, database size, telemetry volume, and retention.
+
+| Component | Documented or practical minimum | Notes |
+| --- | --- | --- |
+| Dokploy | 2 GB RAM, 30 GB disk | Official install docs list this to avoid Docker build resource freezes. Ports 80, 443, and 3000 must be available. |
+| PostgreSQL | No universal official hardware minimum | PostgreSQL runs on ordinary modern Unix-compatible systems; plan disk from real data size, indexes, WAL, backups, and growth. For Vibe Stack MVPs, avoid tiny DB hosts: start with at least 1-2 vCPU, 2 GB RAM, SSD storage, and backups. |
+| Bugsink | 2 GB RAM class server | Bugsink positions itself as a lightweight single-container Sentry-compatible tracker. Its production guide notes workers are well below 100 MiB each and can fit comfortably on a 2 GiB server. |
+| SigNoz | 4 GB memory allocated to Docker | Official Docker standalone docs require Docker Engine 20.10+, Docker Compose v2, and at least 4 GB Docker memory. SigNoz is the heaviest component because it stores and queries telemetry. |
+
+## Minimal Vibe Infra Shape
+
+For a typical low-traffic MVP, use one of these shapes:
+
+| Shape | Minimum | Use when |
+| --- | --- | --- |
+| Single-server MVP | 4 vCPU, 8 GB RAM, 80-100 GB SSD | Everything runs on one VPS: app, Dokploy, PostgreSQL, Bugsink, and SigNoz with modest telemetry retention. |
+| Cheaper split | App host: 2 vCPU, 4 GB RAM, 50-60 GB SSD. Observability host: 2-4 vCPU, 4-8 GB RAM, 50+ GB SSD | You want to keep the application host small and isolate SigNoz. |
+| No local SigNoz yet | 2 vCPU, 4 GB RAM, 50-60 GB SSD | Early MVP where logs and Bugsink are enough temporarily. Add SigNoz when runtime debugging needs traces/metrics. |
+
+SigNoz usually decides whether the stack fits on a small VPS. If telemetry volume grows, reduce retention, sample traces, or move SigNoz to its own machine before scaling everything else.
+
 ## Boundary
 
 This guide does not yet define Kubernetes, cloud-provider-specific infrastructure, or a full production SRE playbook. The default target is a practical self-hosted infrastructure path for small AI-native product teams.
+
+## Sources
+
+- [Dokploy installation requirements](https://docs.dokploy.com/docs/core/installation)
+- [PostgreSQL installation requirements](https://www.postgresql.org/docs/current/install-requirements.html)
+- [PostgreSQL resource configuration](https://www.postgresql.org/docs/current/runtime-config-resource.html)
+- [Bugsink self-hosted Sentry support](https://www.bugsink.com/self-hosted-sentry-support/)
+- [Bugsink single server production setup](https://www.bugsink.com/docs/single-server-production/)
+- [SigNoz Docker standalone install](https://signoz.io/docs/install/docker/)
