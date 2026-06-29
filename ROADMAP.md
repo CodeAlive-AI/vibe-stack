@@ -16,7 +16,7 @@ Define the default security baseline for AI-native products:
 
 ### Autonomous Development Practices
 
-Define the default practices for building and maintaining software through AI agents:
+Expand the default practices for building and maintaining software through AI agents. The current baseline lives in [docs/common-guide.md](docs/common-guide.md):
 
 - Repository structure that agents can navigate reliably.
 - Test, lint, type-check, and observability loops for autonomous changes.

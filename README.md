@@ -42,6 +42,7 @@ SigNoz is based on OpenTelemetry and is the default place for traces, metrics, a
 | --- | --- |
 | TypeScript web apps | Covered |
 | Vibe Infra | Covered |
+| Common agent-ready practices | Covered |
 | Python | Planned, not selected yet |
 | .NET | Planned, not selected yet |
 | Backend-only stacks | Planned, not selected yet |
@@ -53,6 +54,7 @@ Read this README first, then the relevant guide:
 - [TypeScript](docs/languages/typescript.md)
 - [Web application](docs/web-app.md)
 - [Vibe Infra](docs/vibe-infra.md)
+- [Common guide](docs/common-guide.md)
 - [Roadmap](ROADMAP.md)
 
 Do not ask users to choose between equivalent alternatives when this repo already names a default.
