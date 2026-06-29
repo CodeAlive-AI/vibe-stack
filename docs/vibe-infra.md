@@ -53,6 +53,8 @@ For a typical MVP:
 
 This keeps investigation cheap: an agent can start with deploy time, Bugsink events, and Docker/Dokploy logs. If this stops being enough, add OpenTelemetry and SigNoz.
 
+For TypeScript apps, Pino is the default logger. LogLayer can be used later as a wrapper when the project needs a stable logging API across multiple transports, but it is not required for the MVP baseline.
+
 ## Minimal Requirements
 
 These are starting points for a strong MVP, not capacity guarantees. Real requirements depend on traffic, build strategy, database size, telemetry volume, and retention.
@@ -91,5 +93,6 @@ This guide does not yet define Kubernetes, cloud-provider-specific infrastructur
 - [Docker logging drivers](https://docs.docker.com/engine/logging/configure/)
 - [The Twelve-Factor App: Logs](https://12factor.net/logs)
 - [Pino documentation](https://getpino.io/)
+- [LogLayer](https://github.com/loglayer/loglayer)
 - [OpenTelemetry JavaScript logs](https://opentelemetry.io/docs/languages/js/instrumentation/#logs)
 - [SigNoz Docker standalone install](https://signoz.io/docs/install/docker/)

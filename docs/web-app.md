@@ -49,3 +49,5 @@ Ultracite supports multiple toolchains. Vibe Stack's default is Ultracite with O
 Create T3 App is a useful reference for full-stack TypeScript defaults. Vibe Stack borrows the emphasis on type safety, Prisma, and Zod, but does not make tRPC or NextAuth.js defaults yet: Better Auth owns auth, and the API boundary remains project-specific until a single stronger default is selected.
 
 Sources: [Create T3 App](https://create.t3.gg/), [pnpm](https://pnpm.io/), [Prisma](https://www.prisma.io/docs), [Zod](https://zod.dev/), [Pino](https://getpino.io/).
+
+LogLayer is worth considering when the project outgrows direct Pino usage and needs one logging API that can switch or combine transports. Keep Pino direct for the default MVP path.
