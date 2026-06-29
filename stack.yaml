@@ -28,7 +28,7 @@ languages:
       - Better Auth
       - Mantine
       - Tailwind CSS v4
-      - Ultracite
+      - Ultracite + Oxlint
       - Motion
 
   python:
@@ -52,7 +52,11 @@ scenarios:
         database: PostgreSQL
       ui_kit: Mantine
       styling: Tailwind CSS v4
-      quality: TypeScript strict mode + Ultracite
+      quality:
+        type_checking: TypeScript strict mode
+        linting_formatting:
+          choice: Ultracite
+          provider: Oxlint
       animation: Motion
     not_default:
       radix_ui: Use only when Mantine cannot cover a required primitive.
@@ -84,6 +88,7 @@ sources:
   radix_ui: https://www.radix-ui.com/primitives
   motion: https://motion.dev/
   ultracite: https://www.ultracite.ai/
+  oxlint: https://oxc.rs/docs/guide/usage/linter.html
   mastra: https://mastra.ai/
   better_auth: https://www.better-auth.com/docs
   postgresql: https://www.postgresql.org/docs/

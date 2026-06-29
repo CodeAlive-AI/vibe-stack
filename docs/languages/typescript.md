@@ -16,7 +16,7 @@ Use this when the project is a web application:
 | Authentication | Better Auth |
 | UI kit | Mantine |
 | Styling | Tailwind CSS v4 |
-| Code quality | TypeScript strict mode + Ultracite |
+| Code quality | TypeScript strict mode + Ultracite + Oxlint |
 | Animation | Motion |
 
 ## Current Boundary

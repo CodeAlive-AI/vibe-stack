@@ -1,8 +1,10 @@
 # Vibe Stack
 
-Verified AI-native development stack with one recommended choice for the common case.
+The optimal default stack for AI-native products.
 
-This repo is not an awesome-list. It is a small knowledge base that a human or coding agent can read and use to choose the default stack, set up a project, or find the right template.
+A curated set of self-hostable, production-ready technologies that covers the common 95% of product use cases without forcing teams or agents to compare equivalent alternatives.
+
+This is an opinionated gentleman's kit for building modern products with AI agents: one strong default choice for each common need.
 
 ## Current Coverage
 
@@ -28,7 +30,7 @@ Use this for a new AI-native web application:
 | Authentication | Better Auth |
 | UI kit | Mantine |
 | Styling | Tailwind CSS v4 |
-| Code quality | TypeScript strict mode + Ultracite |
+| Code quality | TypeScript strict mode + Ultracite + Oxlint |
 | Animation | Motion |
 
 Radix UI is not the default. Use it only when Mantine cannot cover a required primitive.
@@ -81,6 +83,7 @@ The initial stack was checked against official project pages and docs on 2026-06
 - [Radix UI](https://www.radix-ui.com/primitives)
 - [Motion](https://motion.dev/)
 - [Ultracite](https://www.ultracite.ai/)
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter.html)
 - [Mastra](https://mastra.ai/)
 - [Better Auth](https://www.better-auth.com/docs)
 - [PostgreSQL](https://www.postgresql.org/docs/)
