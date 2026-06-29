@@ -31,7 +31,7 @@ When starting a new web app:
 5. Add Better Auth when the app needs users, sessions, social login, organizations, 2FA, passkeys, or other auth features.
 6. Use PostgreSQL from Vibe Infra as the default application database.
 7. Add Prisma for type-safe database access to PostgreSQL.
-8. Add Zod for input validation, shared schemas, and environment validation.
+8. Add Zod for input validation, shared schemas, and startup config validation.
 9. Add Ultracite with Oxlint for linting and formatting.
 10. Add Motion only when the UI needs animation.
 11. Use Vibe Infra when the app needs deployment, database, error tracking, and observability defaults.

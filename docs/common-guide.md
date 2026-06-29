@@ -35,6 +35,7 @@ If this is unclear, clarify only that. Do not introduce a large process.
 Borrow only the useful part of 12-Factor:
 
 - Put config and secrets outside the code.
+- Validate config on startup.
 - Keep dependencies explicit.
 - Use PostgreSQL, Bugsink, SigNoz, and other services as attached resources.
 - Keep durable state out of the local filesystem.
@@ -42,6 +43,17 @@ Borrow only the useful part of 12-Factor:
 - Run migrations and maintenance as explicit commands.
 
 This is enough for most MVPs. Do not add Kubernetes, service mesh, complex release machinery, or heavy compliance process unless the product actually needs it.
+
+## Config Validation
+
+Validate all required configuration values when the app starts.
+
+- Fail fast when required config is missing or invalid.
+- Use the validation tool that fits the language and framework.
+- Prefer explicit config over hidden defaults.
+- Use defaults only for safe local-development values.
+- Use fallbacks only when the fallback behavior is intentionally designed and tested.
+- Do not silently downgrade production behavior because a config value is missing.
 
 ## Verification
 

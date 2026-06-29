@@ -27,7 +27,7 @@ Vibe Stack does not yet define a separate TypeScript backend-only stack. For now
 
 Better Auth is the default auth choice for TypeScript web apps because it lives inside the application, is framework-agnostic, and supports PostgreSQL.
 
-Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Zod is the default validation layer for runtime inputs, shared schemas, and environment validation.
+Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation.
 
 ## Not The Default
 
