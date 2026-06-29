@@ -6,6 +6,8 @@
 
 Vibe Stack is an opinionated gentleman's kit: a curated set of self-hostable, production-ready technologies that covers the common 95% of product use cases without forcing teams or agents to compare equivalent alternatives.
 
+It is designed for both a smooth fast start and long-running autonomous development and maintenance through AI agents.
+
 ## Defaults
 
 ### Web Application
@@ -49,6 +51,7 @@ Read [stack.yaml](stack.yaml) first, then the relevant guide:
 - [TypeScript](docs/languages/typescript.md)
 - [Web application](docs/web-app.md)
 - [Vibe Infra](docs/vibe-infra.md)
+- [Roadmap](ROADMAP.md)
 
 Do not ask users to choose between equivalent alternatives when this repo already names a default.
 

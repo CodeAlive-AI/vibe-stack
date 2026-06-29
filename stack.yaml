@@ -3,7 +3,8 @@ last_reviewed: 2026-06-29
 goal: >
   A small, verified AI-native development stack with one recommended choice for
   the common case, so humans and coding agents do not have to compare equivalent
-  alternatives before starting work.
+  alternatives before starting work. The stack targets both fast project startup
+  and long-running autonomous development and maintenance through AI agents.
 
 current_coverage:
   - typescript_web_app
@@ -13,6 +14,8 @@ planned_not_selected_yet:
   - python
   - dotnet
   - backend_only_stacks
+  - security_practices
+  - autonomous_development_practices
 
 languages:
   typescript:
