@@ -1,0 +1,78 @@
+version: 0.1.0
+last_reviewed: 2026-06-29
+mission: >
+  A verified, opinionated AI-native development stack with one default choice per
+  layer, covering roughly 95% of product use cases without decision fatigue.
+
+defaults:
+  language:
+    name: TypeScript
+    role: Primary application language
+    default: true
+    source: https://www.typescriptlang.org/docs/
+
+  web:
+    runtime:
+      name: React
+      role: UI runtime
+      source: https://react.dev/
+    framework:
+      name: Next.js
+      role: Full-stack React framework
+      source: https://nextjs.org/docs
+    components:
+      name: Mantine
+      role: Product UI component system
+      source: https://mantine.dev/
+    styling:
+      name: Tailwind CSS v4
+      role: Utility styling and app-specific composition
+      source: https://tailwindcss.com/docs
+    primitives_exception:
+      name: Radix UI
+      role: Accessibility primitives when the default component system is insufficient
+      source: https://www.radix-ui.com/primitives
+    animation:
+      name: Motion
+      role: React animation and UI transitions
+      source: https://motion.dev/
+    quality:
+      type_checking:
+        name: TypeScript strict mode
+        role: Type contract gate
+        source: https://www.typescriptlang.org/tsconfig/
+      lint_format:
+        name: Ultracite
+        role: Zero-config linting and formatting preset for ESLint, Biome, and Oxlint
+        source: https://www.ultracite.ai/
+
+  agents:
+    framework:
+      name: Mastra
+      role: TypeScript agent framework
+      source: https://mastra.ai/
+
+  persistence:
+    database:
+      name: PostgreSQL
+      role: Primary relational database
+      source: https://www.postgresql.org/docs/
+
+  deploy:
+    platform:
+      name: Dokploy
+      role: Self-hosted app deployment platform
+      source: https://dokploy.com/
+    error_tracking:
+      name: Bugsink
+      role: Self-hosted Sentry-compatible error tracking
+      source: https://github.com/bugsink/bugsink
+    observability:
+      name: SigNoz
+      role: OpenTelemetry-native observability for traces, metrics, and logs
+      source: https://signoz.io/docs/
+
+status:
+  stability: draft
+  policy: one-default-per-layer
+  next_review: 2026-07-29
