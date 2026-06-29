@@ -18,6 +18,17 @@ That usually means:
 - One obvious place to inspect errors and runtime behavior.
 - Small reversible changes instead of large process-heavy work.
 
+## Fail Fast And Fast Feedback
+
+Agents should not sweep problems under the rug.
+
+- Prefer fast feedback over delayed surprises.
+- Prefer clear exceptions with actionable messages over silent fallbacks.
+- Fail startup when required config, dependencies, or services are invalid.
+- Keep fallback behavior rare, explicit, tested, and visible.
+- Do not hide broken production behavior behind a default value.
+- Make the shortest useful verification loop easy to run after every change.
+
 ## Minimum Agent-Ready Contract
 
 Before an agent starts work, it should know:
