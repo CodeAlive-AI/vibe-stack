@@ -1,26 +1,27 @@
 # Contributing
 
-Vibe Stack accepts changes that improve the default path. It does not accept broad lists of alternatives without a decision.
+Vibe Stack accepts changes that make the recommended path clearer.
 
-## Contribution Types
+## Rules
 
-- Tighten an existing default.
-- Add a missing layer with one clear default.
-- Move a candidate to default with evidence.
-- Move a default to rejected or exception with evidence.
-- Add a project template that implements the current `stack.yaml`.
+- Keep one recommended choice for the common case.
+- Do not add lists of alternatives.
+- Do not add empty sections for technologies that are not selected yet.
+- If a language or scenario is not ready, mark it as `planned_not_selected_yet` in `stack.yaml`.
+- Keep docs short enough that a coding agent can read them before starting work.
 
-## Required Format
+## Adding A Recommendation
 
-For any tool recommendation, include:
+For a new language, scenario, or deploy tool, update:
 
-- Status: `default`, `exception`, `candidate`, or `rejected`.
-- Layer owned by the tool.
-- Why it wins for the common case.
-- When not to use it.
+1. `stack.yaml`
+2. The relevant file in `docs/`
+3. `README.md` if the current coverage changes
+
+Include:
+
+- The chosen technology.
+- What it is used for.
+- When to use it.
+- What is explicitly not covered yet.
 - Official source link.
-- Review date.
-
-## Default Replacement Rule
-
-Replacing a default needs a decision record in `docs/decisions/`. The decision should explain why the new tool is meaningfully better for AI-native development, not merely newer or more interesting.

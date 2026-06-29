@@ -1,78 +1,77 @@
-version: 0.1.0
+version: 0.2.0
 last_reviewed: 2026-06-29
-mission: >
-  A verified, opinionated AI-native development stack with one default choice per
-  layer, covering roughly 95% of product use cases without decision fatigue.
+goal: >
+  A small, verified AI-native development stack with one recommended choice for
+  the common case, so humans and coding agents do not have to compare equivalent
+  alternatives before starting work.
 
-defaults:
-  language:
-    name: TypeScript
-    role: Primary application language
-    default: true
-    source: https://www.typescriptlang.org/docs/
+current_coverage:
+  - typescript_web_app
+  - vibe_deploy
 
-  web:
-    runtime:
-      name: React
-      role: UI runtime
-      source: https://react.dev/
-    framework:
-      name: Next.js
-      role: Full-stack React framework
-      source: https://nextjs.org/docs
-    components:
-      name: Mantine
-      role: Product UI component system
-      source: https://mantine.dev/
-    styling:
-      name: Tailwind CSS v4
-      role: Utility styling and app-specific composition
-      source: https://tailwindcss.com/docs
-    primitives_exception:
-      name: Radix UI
-      role: Accessibility primitives when the default component system is insufficient
-      source: https://www.radix-ui.com/primitives
-    animation:
-      name: Motion
-      role: React animation and UI transitions
-      source: https://motion.dev/
-    quality:
-      type_checking:
-        name: TypeScript strict mode
-        role: Type contract gate
-        source: https://www.typescriptlang.org/tsconfig/
-      lint_format:
-        name: Ultracite
-        role: Zero-config linting and formatting preset for ESLint, Biome, and Oxlint
-        source: https://www.ultracite.ai/
+planned_not_selected_yet:
+  - python
+  - dotnet
+  - backend_only_stacks
 
-  agents:
-    framework:
-      name: Mastra
-      role: TypeScript agent framework
-      source: https://mastra.ai/
+languages:
+  typescript:
+    status: covered_for_web_apps
+    guide: docs/languages/typescript.md
+    recommended_for:
+      - web_application
+    stack:
+      - TypeScript strict mode
+      - React
+      - Next.js
+      - Mastra
+      - Mantine
+      - Tailwind CSS v4
+      - Ultracite
+      - Motion
 
-  persistence:
-    database:
-      name: PostgreSQL
-      role: Primary relational database
-      source: https://www.postgresql.org/docs/
+  python:
+    status: planned_not_selected_yet
 
-  deploy:
-    platform:
-      name: Dokploy
-      role: Self-hosted app deployment platform
-      source: https://dokploy.com/
-    error_tracking:
-      name: Bugsink
-      role: Self-hosted Sentry-compatible error tracking
-      source: https://github.com/bugsink/bugsink
-    observability:
-      name: SigNoz
-      role: OpenTelemetry-native observability for traces, metrics, and logs
-      source: https://signoz.io/docs/
+  dotnet:
+    status: planned_not_selected_yet
 
-status:
-  stability: draft
-  policy: one-default-per-layer
-  next_review: 2026-07-29
+scenarios:
+  web_application:
+    status: covered
+    guide: docs/web-app.md
+    stack:
+      language: TypeScript
+      ui_runtime: React
+      app_framework: Next.js
+      agent_features: Mastra
+      ui_kit: Mantine
+      styling: Tailwind CSS v4
+      quality: TypeScript strict mode + Ultracite
+      animation: Motion
+    not_default:
+      radix_ui: Use only when Mantine cannot cover a required primitive.
+    boundary: Standalone backend framework is not selected yet.
+
+  vibe_deploy:
+    status: covered
+    guide: docs/vibe-deploy.md
+    stack:
+      deployment: Dokploy
+      database: PostgreSQL
+      error_tracking: Bugsink
+      observability: SigNoz
+
+sources:
+  react: https://react.dev/
+  nextjs: https://nextjs.org/docs
+  mantine: https://mantine.dev/
+  tailwind_css: https://tailwindcss.com/docs
+  radix_ui: https://www.radix-ui.com/primitives
+  motion: https://motion.dev/
+  ultracite: https://www.ultracite.ai/
+  mastra: https://mastra.ai/
+  postgresql: https://www.postgresql.org/docs/
+  dokploy: https://dokploy.com/
+  bugsink: https://github.com/bugsink/bugsink
+  signoz: https://signoz.io/docs/
