@@ -40,8 +40,8 @@ It is designed for both a smooth fast start and long-running autonomous developm
 
 Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, metrics, retention, and correlation become worth the extra resources.
 
-> **Need the full version?**
-> See the detailed guides: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), and [Common guide](docs/common-guide.md).
+> **Full guides**
+> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), and [Common guide](docs/common-guide.md).
 
 ## Coverage
 
