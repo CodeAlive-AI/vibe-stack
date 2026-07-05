@@ -10,19 +10,19 @@ Use this when the project is a web application:
 
 | Need | Choice |
 | --- | --- |
-| Package manager | pnpm |
-| UI runtime | React |
-| App framework | Next.js |
-| Agent workflows | Mastra |
-| AI UI layer | assistant-ui |
-| Authentication | Better Auth |
-| Data access | Prisma + PostgreSQL |
-| Validation | Zod |
-| Logging | Pino JSON logs to stdout |
-| UI kit | Mantine |
-| Styling | Tailwind CSS v4 |
-| Code quality | TypeScript strict mode + Ultracite + Oxlint |
-| Animation | Motion |
+| Package manager | [pnpm](https://pnpm.io/) |
+| UI runtime | [React](https://react.dev/) |
+| App framework | [Next.js](https://nextjs.org/) |
+| Agent workflows | [Mastra](https://mastra.ai/) |
+| AI UI layer | [assistant-ui](https://www.assistant-ui.com/) |
+| Authentication | [Better Auth](https://www.better-auth.com/) |
+| Data access | [Prisma](https://www.prisma.io/) + [PostgreSQL](https://www.postgresql.org/) |
+| Validation | [Zod](https://zod.dev/) |
+| Logging | [Pino](https://getpino.io/) JSON logs to stdout |
+| UI kit | [Mantine](https://mantine.dev/) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
+| Code quality | TypeScript strict mode + [Ultracite](https://www.ultracite.ai/) + [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) |
+| Animation | [Motion](https://motion.dev/) |
 
 ## Current Boundary
 

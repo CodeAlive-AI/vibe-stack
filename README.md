@@ -14,29 +14,29 @@ It is designed for both a smooth fast start and long-running autonomous developm
 
 | Need | Default |
 | --- | --- |
-| Language | TypeScript |
-| Package manager | pnpm |
-| UI | React + Next.js |
-| Agents | Mastra |
-| AI UI layer | assistant-ui |
-| Auth | Better Auth |
-| Data access | Prisma + PostgreSQL |
-| Validation | Zod |
-| Logging | Pino JSON logs to stdout |
-| Components | Mantine |
-| Styling | Tailwind CSS v4 |
-| Quality | TypeScript strict mode + Ultracite + Oxlint |
-| Motion | Motion |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| Package manager | [pnpm](https://pnpm.io/) |
+| UI | [React](https://react.dev/) + [Next.js](https://nextjs.org/) |
+| Agents | [Mastra](https://mastra.ai/) |
+| AI UI layer | [assistant-ui](https://www.assistant-ui.com/) |
+| Auth | [Better Auth](https://www.better-auth.com/) |
+| Data access | [Prisma](https://www.prisma.io/) + [PostgreSQL](https://www.postgresql.org/) |
+| Validation | [Zod](https://zod.dev/) |
+| Logging | [Pino](https://getpino.io/) JSON logs to stdout |
+| Components | [Mantine](https://mantine.dev/) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
+| Quality | TypeScript strict mode + [Ultracite](https://www.ultracite.ai/) + [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) |
+| Animation | [Motion](https://motion.dev/) |
 
 ### Vibe Infra
 
 | Need | Default | Replaces |
 | --- | --- | --- |
-| Deployment | Dokploy | Vercel-style hosted deployment |
-| Database | PostgreSQL | Supabase-style managed Postgres platform |
-| Error tracking | Bugsink | Sentry; compatible with Sentry SDKs |
-| MVP observability | Structured stdout/stderr logs via Docker/Dokploy | Heavy log platforms too early |
-| MVP+ observability | OpenTelemetry + SigNoz | Grafana-style observability stack |
+| Deployment | [Dokploy](https://dokploy.com/) | [Vercel](https://vercel.com/)-style hosted deployment |
+| Database | [PostgreSQL](https://www.postgresql.org/) | [Supabase](https://supabase.com/)-style managed Postgres platform |
+| Error tracking | [Bugsink](https://www.bugsink.com/) | [Sentry](https://sentry.io/); compatible with Sentry SDKs |
+| MVP observability | Structured stdout/stderr logs via [Docker](https://docs.docker.com/engine/logging/) / [Dokploy](https://dokploy.com/) | Heavy log platforms too early |
+| MVP+ observability | [OpenTelemetry](https://opentelemetry.io/) + [SigNoz](https://signoz.io/) | [Grafana](https://grafana.com/)-style observability stack |
 
 Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, metrics, retention, and correlation become worth the extra resources.
 
