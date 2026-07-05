@@ -1,7 +1,5 @@
 # Vibe Infra
 
-Status: covered.
-
 Vibe Infra is the default language-independent infrastructure stack for Vibe Stack applications. It covers deployment, database, error tracking, and the minimum observability needed for agent investigation.
 
 ## Use This Stack

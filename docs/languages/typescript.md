@@ -1,7 +1,5 @@
 # TypeScript
 
-Status: covered for web applications.
-
 TypeScript is the current default language for Vibe Stack because it fits the main supported scenario: AI-native web applications with an app UI and agent features.
 
 ## Recommended Stack

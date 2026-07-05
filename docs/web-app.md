@@ -1,7 +1,5 @@
 # Web Application
 
-Status: covered.
-
 This is the current default for AI-native web apps: product apps, dashboards, internal tools, AI workbenches, and apps with agent features.
 
 ## Use This Stack

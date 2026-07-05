@@ -1,7 +1,5 @@
 # Common Guide
 
-Status: covered.
-
 This is the shared baseline for Vibe Stack projects.
 
 Vibe Stack is optimized for a strong MVP with a low cost of mistake. Follow YAGNI: add only the practices that keep the project easy to change, verify, deploy, and debug with AI agents.
