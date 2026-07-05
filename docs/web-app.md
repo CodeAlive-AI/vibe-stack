@@ -8,20 +8,20 @@ This is the current default for AI-native web apps: product apps, dashboards, in
 
 | Technology | Role |
 | --- | --- |
-| [TypeScript](https://www.typescriptlang.org/) | Main language |
-| [pnpm](https://pnpm.io/) | Package manager |
-| [React](https://react.dev/) | UI runtime |
-| [Next.js](https://nextjs.org/) | App framework |
-| [Mastra](https://mastra.ai/) | Agent workflows and agent features |
-| [assistant-ui](https://www.assistant-ui.com/) | AI chat and assistant UI layer |
-| [Better Auth](https://www.better-auth.com/) | Authentication |
-| [Prisma](https://www.prisma.io/) | Type-safe PostgreSQL data access |
-| [Zod](https://zod.dev/) | Runtime validation, schemas, and environment validation |
-| [Pino](https://getpino.io/) | Structured JSON logging to stdout |
-| [Mantine](https://mantine.dev/) | UI kit |
-| [Tailwind CSS v4](https://tailwindcss.com/) | Styling |
-| [Ultracite](https://www.ultracite.ai/) + [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) | Linting and formatting |
-| [Motion](https://motion.dev/) | Animation |
+| [TypeScript](https://www.typescriptlang.org/) | Main language with strict static types |
+| [pnpm](https://pnpm.io/) | Fast, strict, disk-efficient package manager |
+| [React](https://react.dev/) | UI runtime with the strongest ecosystem |
+| [Next.js](https://nextjs.org/) | Full-stack React framework with routing, rendering, and build defaults |
+| [Mastra](https://mastra.ai/) | TypeScript agent framework for workflows, tools, memory, and model orchestration |
+| [assistant-ui](https://www.assistant-ui.com/) | AI chat and assistant UI layer focused on production-grade UX |
+| [Better Auth](https://www.better-auth.com/) | App-local auth with database-backed sessions, plugins, and advanced auth features |
+| [Prisma](https://www.prisma.io/) | Type-safe PostgreSQL data access with schema-driven migrations |
+| [Zod](https://zod.dev/) | TypeScript-first runtime validation for inputs, schemas, and startup config |
+| [Pino](https://getpino.io/) | Low-overhead structured JSON logging to stdout |
+| [Mantine](https://mantine.dev/) | Complete accessible React component kit for fast product UI |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Utility styling for fast custom UI without leaving markup |
+| [Ultracite](https://www.ultracite.ai/) + [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) | Opinionated AI-friendly code quality with fast linting |
+| [Motion](https://motion.dev/) | Production-grade React animation, previously Framer Motion |
 
 ## Setup Direction For Agents
 
@@ -54,6 +54,6 @@ PostgreSQL + Prisma should be used as a structured core with flexible edges. Mod
 
 assistant-ui is the default AI UI layer for chat, assistant, copilot, and agent-facing interfaces. Use it with Mastra when the product needs a production-ready agent UI instead of building chat primitives from scratch.
 
-Sources: [Create T3 App](https://create.t3.gg/), [pnpm](https://pnpm.io/), [assistant-ui](https://www.assistant-ui.com/), [assistant-ui Mastra integration](https://www.assistant-ui.com/docs/integrations/frameworks/mastra/overview), [Mastra](https://mastra.ai/), [Better Auth](https://www.better-auth.com/), [Prisma](https://www.prisma.io/docs), [Zod](https://zod.dev/), [Pino](https://getpino.io/), [Motion](https://motion.dev/).
+Sources: [Create T3 App](https://create.t3.gg/), [pnpm](https://pnpm.io/), [assistant-ui](https://www.assistant-ui.com/), [assistant-ui Mastra integration](https://www.assistant-ui.com/docs/integrations/frameworks/mastra/overview), [Mastra](https://mastra.ai/), [Better Auth](https://www.better-auth.com/), [Prisma](https://www.prisma.io/docs), [Zod](https://zod.dev/), [Pino](https://getpino.io/), [Mantine](https://mantine.dev/), [Tailwind CSS](https://tailwindcss.com/), [Ultracite](https://www.ultracite.ai/), [Oxlint](https://oxc.rs/docs/guide/usage/linter.html), [Motion](https://motion.dev/).
 
 LogLayer is worth considering when the project outgrows direct Pino usage and needs one logging API that can switch or combine transports. Keep Pino direct for the default MVP path.

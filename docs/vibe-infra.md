@@ -8,11 +8,11 @@ Vibe Infra is the default language-independent infrastructure stack for Vibe Sta
 
 | Technology | Role | Alternative to |
 | --- | --- | --- |
-| [Dokploy](https://dokploy.com/) | Deployment platform | [Vercel](https://vercel.com/)-style hosted deployment |
-| [PostgreSQL](https://www.postgresql.org/) | Primary database | [Supabase](https://supabase.com/)-style managed Postgres platform |
-| [Bugsink](https://www.bugsink.com/) | Error tracking compatible with Sentry SDKs | [Sentry](https://sentry.io/) |
-| Structured stdout/stderr logs | MVP observability through [Docker](https://docs.docker.com/engine/logging/) / [Dokploy](https://dokploy.com/) logs | Heavy log platforms too early |
-| [OpenTelemetry](https://opentelemetry.io/) + [SigNoz](https://signoz.io/) | MVP+ observability for traces, metrics, logs, retention, and correlation | [Grafana](https://grafana.com/)-style observability stack |
+| [Dokploy](https://dokploy.com/) | Self-hosted app deployment without cloud-platform lock-in | [Vercel](https://vercel.com/)-style hosted deployment |
+| [PostgreSQL](https://www.postgresql.org/) | Durable relational database with broad tooling and escape hatches like `jsonb` | [Supabase](https://supabase.com/)-style managed Postgres platform |
+| [Bugsink](https://www.bugsink.com/) | Lightweight self-hosted error tracking compatible with Sentry SDKs | [Sentry](https://sentry.io/) |
+| Structured stdout/stderr logs | Cheapest useful MVP observability through [Docker](https://docs.docker.com/engine/logging/) / [Dokploy](https://dokploy.com/) logs | Heavy log platforms too early |
+| [OpenTelemetry](https://opentelemetry.io/) + [SigNoz](https://signoz.io/) | MVP+ traces, metrics, logs, retention, and correlation on an open telemetry standard | [Grafana](https://grafana.com/)-style observability stack |
 
 ## What Each Choice Means
 
