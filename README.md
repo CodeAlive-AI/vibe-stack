@@ -41,7 +41,7 @@ It is designed for both a smooth fast start and long-running autonomous developm
 Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, metrics, retention, and correlation become worth the extra resources.
 
 > **Full guides**
-> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), and [Common guide](docs/common-guide.md).
+> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
 
 ## Coverage
 
@@ -50,6 +50,7 @@ Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, 
 | TypeScript web apps | Covered |
 | Vibe Infra | Covered |
 | Common agent-ready practices | Covered |
+| Security practices | Covered |
 | Python | Planned, not selected yet |
 | .NET | Planned, not selected yet |
 | Backend-only stacks | Planned, not selected yet |
@@ -64,6 +65,7 @@ Use this repo as a decision shortcut, not as a comparison catalog.
 - [TypeScript](docs/languages/typescript.md)
 - [Web application](docs/web-app.md)
 - [Vibe Infra](docs/vibe-infra.md)
+- [Security Practices](docs/security-practices.md)
 - [Common guide](docs/common-guide.md)
 - [Roadmap](ROADMAP.md)
 
