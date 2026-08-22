@@ -14,7 +14,7 @@ Use this when the project is a web application:
 | Agent workflows | [Mastra](https://mastra.ai/) |
 | AI UI layer | [assistant-ui](https://www.assistant-ui.com/) |
 | Authentication | [Better Auth](https://www.better-auth.com/) |
-| Data access | [Prisma](https://www.prisma.io/) + [PostgreSQL](https://www.postgresql.org/) |
+| Data access | [Drizzle ORM](https://orm.drizzle.team/) + [PostgreSQL](https://www.postgresql.org/) |
 | Validation | [Zod](https://zod.dev/) |
 | Logging | [Pino](https://getpino.io/) JSON logs to stdout |
 | UI kit | [Mantine](https://mantine.dev/) |
@@ -30,7 +30,7 @@ assistant-ui is the default AI UI layer for chat, assistant, copilot, and agent-
 
 Better Auth is the default auth choice for TypeScript web apps because it lives inside the application, is framework-agnostic, and supports PostgreSQL.
 
-Prisma is the default data access layer for PostgreSQL because it gives TypeScript apps a type-safe generated client. Keep stable entities and relations in the Prisma schema, and use PostgreSQL `jsonb` only for unstable metadata, provider payloads, and experimental fields. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation. Pino is the default logger because it produces fast structured JSON logs that Docker and later log collectors can consume.
+Drizzle ORM is the default data access layer for PostgreSQL because it provides type-safe, SQL-like queries and TypeScript schemas without hiding the underlying database model. Keep stable entities, relations, and constraints in the Drizzle schema, generate reviewable SQL migrations with Drizzle Kit, and use PostgreSQL `jsonb` only for unstable metadata, provider payloads, and experimental fields. Zod is the default validation layer for runtime inputs, shared schemas, and startup config validation. Pino is the default logger because it produces fast structured JSON logs that Docker and later log collectors can consume.
 
 LogLayer can be added later when the project needs a logger abstraction over Pino and other transports. It is not the default MVP choice because direct Pino is simpler.
 

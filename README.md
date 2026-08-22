@@ -20,7 +20,7 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | Agents | [Mastra](https://mastra.ai/) |
 | AI UI layer | [assistant-ui](https://www.assistant-ui.com/) |
 | Auth | [Better Auth](https://www.better-auth.com/) |
-| Data access | [Prisma](https://www.prisma.io/) + [PostgreSQL](https://www.postgresql.org/) |
+| Data access | [Drizzle ORM](https://orm.drizzle.team/) + [PostgreSQL](https://www.postgresql.org/) |
 | Validation | [Zod](https://zod.dev/) |
 | Logging | [Pino](https://getpino.io/) JSON logs to stdout |
 | Components | [Mantine](https://mantine.dev/) |
@@ -36,9 +36,10 @@ It is designed for both a smooth fast start and long-running autonomous developm
 | Database | [PostgreSQL](https://www.postgresql.org/) | [Supabase](https://supabase.com/)-style managed Postgres platform |
 | Error tracking | [Bugsink](https://www.bugsink.com/) | [Sentry](https://sentry.io/); compatible with Sentry SDKs |
 | MVP observability | Structured stdout/stderr logs via [Docker](https://docs.docker.com/engine/logging/) / [Dokploy](https://dokploy.com/) | Heavy log platforms too early |
-| MVP+ observability | [OpenTelemetry](https://opentelemetry.io/) + [SigNoz](https://signoz.io/) | [Grafana](https://grafana.com/)-style observability stack |
+| MVP+ observability | [OpenObserve](https://openobserve.ai/) + [OpenTelemetry](https://opentelemetry.io/) | [Grafana](https://grafana.com/)-style observability stack |
+| Agent observability | [OpenObserve AI/LLM observability](https://openobserve.ai/docs/integration/ai/llm-applications/) | A separate agent-observability backend |
 
-Start with structured logs and Bugsink. Add OpenTelemetry + SigNoz when traces, metrics, retention, and correlation become worth the extra resources.
+Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when traces, metrics, retention, and correlation become worth the extra resources. For agent products, send model, tool, retrieval, workflow, and agent-turn spans to the same OpenObserve backend; its built-in Online Evaluations are an optional Enterprise feature.
 
 > **Full guides**
 > Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
