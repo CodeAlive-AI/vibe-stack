@@ -53,6 +53,7 @@ Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when tra
 | Common agent-ready practices | Covered |
 | Security practices | Covered |
 | Existing web apps to iOS/Android | [Capacitor 8.5 agent skill](skills/agentic-capacitor/README.md) |
+| Apple App Store submission review | [App Store reviewer skill](skills/apple-app-store-reviewer/README.md) |
 | Python | Planned, not selected yet |
 | .NET | Planned, not selected yet |
 | Backend-only stacks | Planned, not selected yet |
@@ -62,6 +63,8 @@ Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when tra
 [agentic-capacitor](skills/agentic-capacitor/README.md) helps agents add Capacitor 8.5 to an existing web app, especially React 19.2, maintain iOS/Android integrations, and prepare for a later Capacitor 9 upgrade. It preserves the existing web architecture and includes offline validation scripts.
 
 See the [skill README](skills/agentic-capacitor/README.md) for installation, example requests, validation commands, and coverage limits.
+
+[apple-app-store-reviewer](skills/apple-app-store-reviewer/README.md) audits Apple-platform release candidates before submission or resubmission, including Capacitor apps. It combines deterministic checks with evidence-based manual review; it does not guarantee App Store approval.
 
 ## For Agents
 
