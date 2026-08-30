@@ -29,6 +29,8 @@ When evidence conflicts, use this order:
 
 Do not let a clean source config override a bundled `server.url`, or a package declaration prove that a plugin or privacy manifest reached the archive.
 
+Existing reports from [agentic-capacitor's deterministic validator](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/agentic-capacitor/references/validation-scripts.md) can supplement dependency, source-web and copied-native evidence. Record the tool/profile version, selected checks and platforms, input paths/hashes, exit status and unresolved findings. Its current profile targets 8.5.x, does not inspect final archived assets, and does not prove lockfile integrity or plugin compatibility. Exit `0` means only that its selected static invariants passed; exit `2` means review is required, not success. Do not map its results directly to this skill's gate or use them to skip the three-state parity matrix. After repairs, use the [implementation handoff](capacitor-ios.md) and bind new reports to the new candidate.
+
 ## Safe inspection contract
 
 - Read `capacitor.config.json` exactly.

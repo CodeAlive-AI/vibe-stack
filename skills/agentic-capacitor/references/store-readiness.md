@@ -29,3 +29,11 @@ Assess Google Play's payments policy separately, including distribution/program/
 ## Privacy and acceptance evidence
 
 Use the security reference for manifests, listed SDKs, signing conditions and required-reason APIs. Keep store disclosures consistent with actual SDK collection. Provide an actionable checklist of applicable requirements, evidence and unresolved decisions rather than a blanket “store-ready” claim. Preparing a submission does not authorize submitting it.
+
+## Apple release-review handoff
+
+For an Apple submission, resubmission or rejection, the optional companion [apple-app-store-reviewer](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/apple-app-store-reviewer/SKILL.md) covers the exact release candidate, current Apple policy, metadata, screenshots, privacy/payment evidence and reviewer journeys. Its [Capacitor release-integrity contract](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/apple-app-store-reviewer/references/capacitor-release-integrity.md) adds source/generated/submitted parity checks beyond this skill's engineering checks. It does not cover Google Play review.
+
+Pass the commit and build identity, resolved dependency inventory, web/native asset hashes, final archive when available, and test reports with missing evidence clearly marked. Do not pass credentials or claim that this skill's static checks establish submission readiness. If the audit finds implementation defects, return the finding IDs, evidence and acceptance checks to `agentic-capacitor` for authorized fixes, then review the new release candidate; previous evidence may no longer apply.
+
+Use an available installed companion by name or consult its canonical source above under the normal access policy. Neither skill requires installing the other. Missing companion access must be disclosed without weakening the evidence requirements. Cross-references do not authorize installation, automatic mutual invocation, app changes or uploads.

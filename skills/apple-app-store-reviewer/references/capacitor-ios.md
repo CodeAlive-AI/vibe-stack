@@ -4,6 +4,14 @@ Apply this overlay whenever the release contains `@capacitor/ios`, `capacitor.co
 
 This skill qualifies Capacitor `>=8.5.0 <9.0.0`. Versions below the requested baseline or at/above 9.0 cannot receive a framework-readiness pass; label a future major `FRAMEWORK BASELINE UNVERIFIED` until its final requirements and artifacts are requalified. Read `capacitor-release-integrity.md` for the mandatory evidence/gate contract and `capacitor-live-updates.md` when mutable remote assets are detected.
 
+## Implementation handoff
+
+Use the optional [agentic-capacitor](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/agentic-capacitor/SKILL.md) for requested implementation work rather than expanding a read-only audit into a migration. Its [iOS and UIScene workflow](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/agentic-capacitor/references/ios.md) supports lifecycle/SPM fixes; [authentication and networking](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/agentic-capacitor/references/auth-network.md) covers native login and deep-link repairs. Keep the user's platform scope, existing architecture and native customizations.
+
+Provide finding IDs, observed source/generated/bundled differences, resolved versions, build identity and required verification. Make changes only under an implementation request; the audit's no-mutation rules still apply until then. After fixes and a new build, return to this reviewer for affected checks and the final evidence gate. Neither a successful build nor the companion's static validator is an Apple approval or readiness verdict.
+
+Each skill is independently usable. Prefer an available installed companion by name; the links above remain usable for separate installations under the normal access policy. Do not auto-install the companion or create an automatic review/fix loop. If it is unavailable, disclose the limitation and retain this review's evidence requirements. Check version scope separately: the companion targets 8.5 and prepares for 9, but that preparation does not qualify 9 for this review.
+
 ## Authoritative sources
 
 - Capacitor v8 documentation: `https://capacitorjs.com/docs`

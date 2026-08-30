@@ -44,6 +44,8 @@ Keep signing credentials in the user's approved secret mechanism and out of conf
 
 Before submission consult current [Apple review rules](https://developer.apple.com/app-store/review/guidelines/) and [Google Play policy](https://play.google.com/about/developer-content-policy/). Verify app identity, version/build number, privacy metadata, screenshots, account access and deletion/payment flows as applicable. Packaging a website is not assurance of acceptance. Preparing these artifacts does not authorize submission.
 
+For Apple releases, hand the exact candidate and this evidence to [apple-app-store-reviewer](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/apple-app-store-reviewer/SKILL.md) when available, following the [store-readiness handoff](store-readiness.md). Preserve each tool's version scope, exit status and limitations: a passing Capacitor file check is supporting evidence, not the reviewer's final gate. After implementation fixes, rebuild and re-review affected artifacts and runtime paths rather than carrying forward a stale verdict.
+
 ## Optional OTA updates
 
 Do not add an OTA vendor or run an upload merely because the app uses Capacitor. When requested, compare the existing strategy, native/plugin compatibility, integrity/signature checks, rollback, staged channels, telemetry/privacy and cost. A web update cannot supply missing native code or change native entitlements. Test failed/interrupted downloads and rollback against the intended binary version. Verify applicable store rules; do not describe OTA as a way around review. Obtain authorization for the exact external rollout unless already supplied.

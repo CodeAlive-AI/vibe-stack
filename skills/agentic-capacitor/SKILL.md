@@ -47,6 +47,7 @@ Use this shared reference map in every mode. Conversion continues into normal na
 | Failures, testing, CI, signing, distribution, OTA | [Verification and release](references/verification.md) |
 | Deterministic post-conversion/config/assets checks | [Validation scripts](references/validation-scripts.md) |
 | Store-facing login, account deletion, billing, minimum functionality | [Store readiness](references/store-readiness.md) |
+| Apple submission/resubmission audit | Optional [apple-app-store-reviewer](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/apple-app-store-reviewer/SKILL.md); handoff rules in [store readiness](references/store-readiness.md) |
 | Upcoming major version | [Capacitor 9 readiness](references/capacitor-9.md) |
 | Full integration/release review, feature applicability | [Platform coverage and limits](references/platform-coverage.md) |
 

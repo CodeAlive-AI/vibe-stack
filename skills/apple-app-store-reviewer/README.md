@@ -44,6 +44,8 @@ Capacitor is auto-detected from package/config, native-project, bridge, or final
 
 The review compares three states: production `webDir` and source config, post-sync native config/assets/dependencies, and the exact submitted bundle. Missing config, asset, plugin, privacy, or identity parity prevents `READY FOR SUBMISSION`. Default inspection never executes JS/TS config or mutates the project; trusted CLI evidence must use the project-local CLI in a disposable copy. Framework presence alone is never a Guideline 4.2/4.3 finding.
 
+For web-to-Capacitor conversion or implementation fixes found during review, use the optional companion [agentic-capacitor](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/agentic-capacitor/README.md). It covers development and engineering validation; return here with the changed release candidate for submission review. Its file-check reports are supporting evidence, not an approval gate. Both skills remain independently usable, and neither installs or invokes the other automatically. See the [implementation handoff](references/capacitor-ios.md) and [evidence contract](references/capacitor-release-integrity.md).
+
 ## Evidence model
 
 - `PASS` requires an observed artifact or runtime path.

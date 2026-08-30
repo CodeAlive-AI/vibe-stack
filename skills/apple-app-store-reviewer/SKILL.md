@@ -207,6 +207,8 @@ Any material contradiction is at least `HIGH`; a directly misleading price, hidd
 
 ### 9. Report, fix, and re-verify
 
+For requested Capacitor implementation fixes, the optional companion [agentic-capacitor](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/agentic-capacitor/SKILL.md) covers web conversion, native configuration, UIScene and lifecycle work. Pass finding IDs, exact build evidence and acceptance checks; return here to audit the changed candidate. Follow the handoff boundaries in `references/capacitor-ios.md`; the companion's checks do not replace this review's gate or authorize mutations during an audit.
+
 Use the report schema in `assets/review-report.schema.json`. Every finding must contain:
 
 - Stable ID, status, severity, confidence, category, and guideline.

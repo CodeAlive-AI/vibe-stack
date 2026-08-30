@@ -16,6 +16,8 @@ The verified baseline is **Capacitor 8.5**, with specific guidance for **React 1
 
 Read the [coverage matrix](references/platform-coverage.md) for conditional features and limits, the [version rules](references/versions.md) for prerequisites, and [Capacitor 9 readiness](references/capacitor-9.md) for the upgrade strategy.
 
+For Apple submission or resubmission, pair this engineering workflow with [apple-app-store-reviewer](https://github.com/CodeAlive-AI/vibe-stack/blob/main/skills/apple-app-store-reviewer/README.md). It reviews release evidence, metadata, screenshots and Apple-specific requirements; return implementation findings here for fixes and then re-review the candidate. The skills work independently and do not install or invoke each other automatically. See the [handoff rules](references/store-readiness.md).
+
 ## Install
 
 Review the skill and choose the agent and installation scope before installing. Keep one active implementation named `agentic-capacitor`; do not overwrite a divergent local copy without reviewing it.
