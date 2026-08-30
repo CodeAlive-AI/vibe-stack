@@ -52,16 +52,16 @@ Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when tra
 | Vibe Infra | Covered |
 | Common agent-ready practices | Covered |
 | Security practices | Covered |
-| Existing web apps to iOS/Android | [Capacitor 8.5 agent skill](skills/README.md#agentic-capacitor) |
+| Existing web apps to iOS/Android | [Capacitor 8.5 agent skill](skills/agentic-capacitor/README.md) |
 | Python | Planned, not selected yet |
 | .NET | Planned, not selected yet |
 | Backend-only stacks | Planned, not selected yet |
 
 ## Agent Skills
 
-[agentic-capacitor](skills/README.md#agentic-capacitor) helps agents add Capacitor 8.5 to an existing web app, especially React 19.2, maintain iOS/Android integrations, and prepare for a later Capacitor 9 upgrade. It preserves the existing web architecture and includes offline validation scripts.
+[agentic-capacitor](skills/agentic-capacitor/README.md) helps agents add Capacitor 8.5 to an existing web app, especially React 19.2, maintain iOS/Android integrations, and prepare for a later Capacitor 9 upgrade. It preserves the existing web architecture and includes offline validation scripts.
 
-See the [skills README](skills/README.md) for installation, example requests, validation commands, and coverage limits.
+See the [skill README](skills/agentic-capacitor/README.md) for installation, example requests, validation commands, and coverage limits.
 
 ## For Agents
 
