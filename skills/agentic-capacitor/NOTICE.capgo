@@ -1,0 +1,23 @@
+Capgo skills attribution and license evidence
+
+Upstream: Cap-go/capgo-skills
+Component reviewed: skills/webapp-to-capacitor/SKILL.md
+Snapshot: c0afb73c859a85c35c8d03d3dc9afdee5fe78d30
+Package name: @capgo/capgo-skills
+Package author: Capgo
+Declared license: MIT
+
+Sources at the reviewed snapshot:
+https://github.com/Cap-go/capgo-skills/blob/c0afb73c859a85c35c8d03d3dc9afdee5fe78d30/package.json
+https://github.com/Cap-go/capgo-skills/blob/c0afb73c859a85c35c8d03d3dc9afdee5fe78d30/README.md
+
+The package.json license field and README License section both declare MIT.
+No standalone upstream LICENSE or additional copyright notice was located in
+that snapshot. This file records the upstream declaration and author; it is
+not a copied upstream LICENSE. The standard MIT permission and warranty text
+is included in the accompanying LICENSE. Preserve this attribution record
+and the original Capawesome license alongside it.
+
+The conversion workflow was reviewed and rewritten. Automatic shell
+interpolation, vendor promotion, and upload commands were not retained.
+This independently maintained consolidation is not endorsed by Capgo.
