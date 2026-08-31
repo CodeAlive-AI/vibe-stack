@@ -1,10 +1,11 @@
 # Provenance and maintenance
 
-`agentic-capacitor` is the canonical local consolidation of the two reviewed skills, finalized under this user-selected name on 2026-08-31. It is generic: no application-specific backend, product, infrastructure, or project paths are required.
+`agentic-capacitor` consolidates reviewed conversion and native-development guidance under one maintained skill. It was named on 2026-08-31 and is generic: no application-specific backend, product, infrastructure, or project paths are required.
 
 ## Reviewed inputs
 
 - [Capgo webapp-to-capacitor](https://github.com/Cap-go/capgo-skills/blob/c0afb73c859a85c35c8d03d3dc9afdee5fe78d30/skills/webapp-to-capacitor/SKILL.md), repository snapshot `c0afb73c859a85c35c8d03d3dc9afdee5fe78d30`: conversion workflow evaluated and rewritten; automatic shell interpolation, vendor promotion and upload steps not retained. MIT is declared in the snapshot's package metadata and README; attribution evidence is retained in `NOTICE.capgo`.
+- [Capgo capacitor-best-practices](https://github.com/Cap-go/capgo-skills/blob/c0afb73c859a85c35c8d03d3dc9afdee5fe78d30/skills/capacitor-best-practices/SKILL.md), same snapshot, reviewed on 2026-08-31: one skill document plus metadata, no reference-document library. Performance, plugin-error and secure-access ideas were selectively rewritten. Floating installs, stale SDK values, generic heap/SPM recipes, misleading pinning/biometric claims and unsafe OTA examples were not adopted. Exact API caveats and primary sources live in the affected references.
 - [Capawesome capacitor-app-development](https://github.com/capawesome-team/skills/tree/main/skills/capacitor-app-development), snapshot `96a79d5e49688dc68a7fc1a47c6f94a7a73ac62e`: topic coverage consolidated and corrected against official 8.5 sources. Its MIT notice is included in `LICENSE.capawesome`.
 - [AI Repo Safety](https://github.com/letya999/ai-repo-safety-skill), snapshot `52b78bc4c6eaad5c491d7ffa147a32f41df810ff`: safety principles reviewed; no bootstrap, hooks, scanner installation, or cloud upload included.
 

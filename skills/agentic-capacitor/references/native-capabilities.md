@@ -20,6 +20,12 @@ Install only capabilities the product needs. A suggested “minimal stack” is 
 
 Declare only required permissions/capabilities and meaningful usage strings. Request access at the feature's point of use; handle granted, denied, restricted/limited and settings-return paths according to the actual plugin/OS. Never auto-grant, silently fake success, or repeatedly prompt. For push distinguish permission, device token registration, backend token ownership, token refresh, and foreground/background delivery; logout must disassociate tokens as required. Test hardware-specific behavior on devices.
 
+## Plugin error contracts
+
+Keep separate outcomes for user cancellation, unavailable capability, permission denial/limited access, transient failure and unexpected native/integration errors. Use documented codes from the installed plugin when available; Capacitor plugins do not share a universal cancellation taxonomy. Avoid matching localized English message text or assuming a caught value is an `Error`. Narrow unknown values and emit sanitized categories while preserving unexpected failures for diagnosis.
+
+Check availability where the feature requires it, but also handle failure during the call: device state, enrollment and permissions can change. Do not silently fall back after failed authentication or missing native linking. An alternative sign-in method must be explicitly designed and enforce the same server authorization policy. Test failure/cancellation fixtures in the existing test stack, then real platform behavior; a mock must not be the production implementation.
+
 ## Storage classification
 
 Before choosing persistent storage, decide which state must survive process death and which is bound to the current account. For plugins opening Android Activities, register `App`'s `appRestoredResult` handler early: Camera results can arrive after the original JS process and promise are gone. Validate plugin/method/result, restore only the relevant pending operation and prevent duplicate uploads or applying a previous account's result. This is distinct from `appUrlOpen` and ordinary resume. Source: [App restored results](https://capacitorjs.com/docs/apis/app).

@@ -1,6 +1,6 @@
 # agentic-capacitor
 
-**Version 0.1.0.** [Open the skill](SKILL.md).
+**Version 0.1.1.** [Open the skill](SKILL.md).
 
 Add Capacitor to an existing web app without rewriting its UI or moving its backend into the mobile bundle. The skill supports continued native development as well as the initial web-to-mobile conversion, follows the requested platform order, and does not require Ionic or a particular UI library.
 
@@ -12,6 +12,7 @@ The verified baseline is **Capacitor 8.5**, with specific guidance for **React 1
 - React lifecycle, routing, authentication, cold/warm deep links, streaming, and native capability boundaries.
 - iOS SPM and UIScene; Android toolchain, back navigation, edge-to-edge layout, and adaptive UI.
 - Plugins, permissions, files, storage, keyboard/insets, lifecycle recovery, security, privacy, and release checks.
+- [Performance](references/performance.md): measured startup, bridge traffic, memory, media handling and Android release optimization; explicit plugin-error, biometric-access and optional OTA contracts.
 - Deterministic checks of dependencies, built web assets, copied native configuration/assets, and selected iOS/Android metadata.
 
 Read the [coverage matrix](references/platform-coverage.md) for conditional features and limits, the [version rules](references/versions.md) for prerequisites, and [Capacitor 9 readiness](references/capacitor-9.md) for the upgrade strategy.
@@ -72,4 +73,4 @@ Keep the entry point short and place detailed workflows in the relevant referenc
 
 MIT, with the [main license](LICENSE), the preserved [Capawesome license](LICENSE.capawesome), and [Capgo attribution](NOTICE.capgo). Keep all three when redistributing the skill.
 
-The skill consolidates and corrects reviewed material from Capgo's `webapp-to-capacitor` and Capawesome's `capacitor-app-development`; [provenance](references/provenance.md) records the source commits and license evidence. It is not an official or endorsed product of Ionic, Capgo, or Capawesome.
+The skill consolidates and corrects reviewed material from Capgo's `webapp-to-capacitor` and `capacitor-best-practices` and Capawesome's `capacitor-app-development`; [provenance](references/provenance.md) records the source commits and license evidence. Upstream examples are selectively rewritten, not imported as executable setup instructions. It is not an official or endorsed product of Ionic, Capgo, or Capawesome.

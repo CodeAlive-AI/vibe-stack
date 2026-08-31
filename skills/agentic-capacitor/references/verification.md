@@ -16,6 +16,8 @@ Keep the project's existing test stack. Web Playwright/jsdom and plugin mocks do
 
 For conversion/migration cover cold/warm link handling, startup offline, login/logout/expiry, resume, router restoration, unavailable permissions, plugin failure, keyboard overlap, and actual streaming/files where used. Check cancellation/listener cleanup and duplicate effects in React development mode. Use focused regression tests for consequential logic; do not add tests that only repeat configuration text.
 
+For startup, memory or responsiveness regressions use the [performance workflow](performance.md). Keep release optimization and device measurements separate from web unit tests and static validation.
+
 ## Prove distribution-sensitive paths early
 
 Prepare an early release-like prototype that exercises auth return, required deep/universal links, keyboard/insets, cold launch and push when the product uses it. Test foreground, background and terminated launch states on the relevant device. Do not add unused features just to complete a checklist, or assume one successful simulator login validates them all.
@@ -49,3 +51,9 @@ For Apple releases, hand the exact candidate and this evidence to [apple-app-sto
 ## Optional OTA updates
 
 Do not add an OTA vendor or run an upload merely because the app uses Capacitor. When requested, compare the existing strategy, native/plugin compatibility, integrity/signature checks, rollback, staged channels, telemetry/privacy and cost. A web update cannot supply missing native code or change native entitlements. Test failed/interrupted downloads and rollback against the intended binary version. Verify applicable store rules; do not describe OTA as a way around review. Obtain authorization for the exact external rollout unless already supplied.
+
+Separate checking, downloading, scheduling, activation and readiness confirmation. Persist safe resumable state before activation; never reload through an active payment, auth return, recording, unsaved edit or upload/stream without the product's explicit interruption policy. Backgrounding can be part of those flows and is not automatically a safe activation point. Validate the update's native compatibility and data-schema compatibility, including whether rolling back JS can still read data written by the new bundle.
+
+If Capgo is selected, review its installed types rather than copying generic live-update snippets. In the reviewed `@capgo/capacitor-updater@8.51.15` definitions, `set({ id })` reloads immediately; `next({ id })` schedules a downloaded bundle without immediately destroying the JS context, with subsequent activation governed by lifecycle/delay settings. `updateAvailable` supplies `{ bundle }`, not top-level `url`/`version` to pass to another download. Avoid duplicate downloads or competing automatic/manual activation owners. Source: [versioned package](https://registry.npmjs.org/@capgo/capacitor-updater/-/capacitor-updater-8.51.15.tgz), [Updater API](https://capgo.app/docs/plugins/updater/api/).
+
+Confirm readiness on each launch only after a bounded local startup-health check, within the installed updater's configured timeout. Do not acknowledge a broken bundle at module import, or wait indefinitely for a remote service and cause unnecessary rollback. Await/handle non-terminal plugin calls and own listener cleanup across React effects. Test a healthy offline launch, a deliberately broken bundle, interrupted download, unsafe activation timing and recovery to a compatible known-good/built-in bundle. Package/type inspection alone does not certify OTA behavior on a device. Source: [Readiness and rollback](https://capgo.app/docs/plugins/updater/notify-app-ready/).

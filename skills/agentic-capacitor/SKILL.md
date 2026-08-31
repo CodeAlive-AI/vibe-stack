@@ -3,7 +3,7 @@ name: agentic-capacitor
 description: Develops Capacitor 8.5 apps and converts existing web apps (web-app-to-capacitor), especially React 19.2. Use when adding iOS/Android, integrating native features, diagnosing native builds, migrating to UIScene, or preparing for Capacitor 9. Not for React Native or unrelated React UI work.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Agentic Capacitor
@@ -23,7 +23,7 @@ When implementing on 8.5, reduce future migration work through public APIs, expl
 
 ## Choose the workflow
 
-Select the mode from the requested outcome; do not run every mode for a small task.
+Select the requested mode; do not run every mode for a small task.
 
 - **Convert a web app:** establish the client/server boundary, reuse the working web UI, and prove a representative native journey before adding capabilities.
 - **Develop a native feature:** inspect existing platform integration, implement the smallest compatible change, and verify the real permission/lifecycle/error paths.
@@ -31,7 +31,7 @@ Select the mode from the requested outcome; do not run every mode for a small ta
 - **Migrate to 8.5:** compare the current version and native project with the target requirements; merge custom native behavior and verify regressions.
 - **Prepare for 9:** produce a compatibility inventory and blockers while keeping the stable build intact; perform prerelease work only when requested.
 
-Use this shared reference map in every mode. Conversion continues into normal native development using the same configuration, security, and verification rules; it is not a separate nested skill.
+Use these references for conversion and native development.
 
 | Request | Read before implementing |
 | --- | --- |
@@ -43,6 +43,7 @@ Use this shared reference map in every mode. Conversion continues into normal na
 | Insets, system bars, keyboard, splash, accessibility | [Native UX](references/native-ux.md) |
 | Login, deep links, CORS, cookies, streaming | [Authentication and networking](references/auth-network.md) |
 | Plugins, permissions, files, persistence | [Native capabilities](references/native-capabilities.md) |
+| Slow startup, bridge overhead, memory, release size | [Performance](references/performance.md) |
 | Supply chain, secrets, bridge exposure, privacy | [Security](references/security.md) |
 | Failures, testing, CI, signing, distribution, OTA | [Verification and release](references/verification.md) |
 | Deterministic post-conversion/config/assets checks | [Validation scripts](references/validation-scripts.md) |

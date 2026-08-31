@@ -1,7 +1,9 @@
 Capgo skills attribution and license evidence
 
 Upstream: Cap-go/capgo-skills
-Component reviewed: skills/webapp-to-capacitor/SKILL.md
+Components reviewed:
+  skills/webapp-to-capacitor/SKILL.md
+  skills/capacitor-best-practices/SKILL.md
 Snapshot: c0afb73c859a85c35c8d03d3dc9afdee5fe78d30
 Package name: @capgo/capgo-skills
 Package author: Capgo
@@ -18,6 +20,7 @@ not a copied upstream LICENSE. The standard MIT permission and warranty text
 is included in the accompanying LICENSE. Preserve this attribution record
 and the original Capawesome license alongside it.
 
-The conversion workflow was reviewed and rewritten. Automatic shell
-interpolation, vendor promotion, and upload commands were not retained.
+The conversion workflow and selected best-practice guidance were reviewed
+and rewritten. Automatic shell interpolation, vendor promotion, upload
+commands, and unsafe or outdated configuration/API examples were not retained.
 This independently maintained consolidation is not endorsed by Capgo.

@@ -16,6 +16,14 @@ Prevent untrusted navigation inside the bridge-enabled app, unsafe HTML/script i
 
 Preserve HTTPS and certificate verification. If the threat model calls for pinning, select a native mechanism with rotation/backup-key and recovery planning; enabling CapacitorHttp alone does not implement pinning. Check production native network policies after sync.
 
+## Biometric access and device integrity
+
+Encrypted storage, a successful biometric prompt and authentication-bound secret access are separate properties. Do not assume a method named `getCredentials()` prompts or cryptographically requires biometrics. If the threat model requires biometric-gated decryption, verify the storage access-control setting and retrieval API on both platforms; a JS boolean after `verifyIdentity()` is not that guarantee. Avoid storing a user's password when the existing session protocol supports revocable credentials instead. Test cancellation, lockout, unenrolled/changed biometrics, credential invalidation, logout and account switching.
+
+For example, Capgo documents `getCredentials()` separately from `getSecureCredentials()` with biometric access-control requirements. Verify the exact installed version and native implementation before adopting it; this is not a mandatory plugin. Source: [Native Biometric API](https://github.com/Cap-go/capacitor-native-biometric).
+
+Root/jailbreak checks are optional risk signals, not proof of device integrity or a substitute for backend authorization. Document false positives, bypass limitations and the product's response before restricting access. A negative check must never grant extra privileges, and a detector failure must not be silently treated as a clean device.
+
 ## Privacy and release
 
 Inventory actual native SDK data collection, required-reason API use, permissions and background modes. Privacy manifests and store disclosure obligations follow Apple's API/SDK/submission rules, not a simplistic “iOS 17 app” threshold. Use approved explanations and current official policy; do not invent reasons, compliance attestations, or consent. Assess account deletion, payments, tracking and health/children's data only when relevant to the product and distribution regions.
