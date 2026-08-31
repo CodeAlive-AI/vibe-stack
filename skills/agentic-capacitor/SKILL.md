@@ -3,12 +3,12 @@ name: agentic-capacitor
 description: Develops Capacitor 8.5 apps and converts existing web apps (web-app-to-capacitor), especially React 19.2. Use when adding iOS/Android, integrating native features, diagnosing native builds, migrating to UIScene, or preparing for Capacitor 9. Not for React Native or unrelated React UI work.
 license: MIT
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Agentic Capacitor
 
-Build on the application's existing web architecture. Target the verified Capacitor 8.5 release line; treat Capacitor 9 preparation as a separate compatibility assessment, not permission to install prereleases. This skill covers web-app-to-Capacitor integration and continued native development without requiring Ionic or another UI framework.
+Build on the application's existing web architecture. Target the verified Capacitor 8.5 release line; treat Capacitor 9 preparation as a separate compatibility assessment, not permission to install prereleases. No Ionic or UI framework migration is required.
 
 For a new production integration under the verified baseline, start with 8.5 and the default iOS SPM/UIScene template. Keep native dependencies easy to audit; use the 9 readiness gate to decide when to trial or adopt the next major, regardless of the application's planned launch month.
 
@@ -42,7 +42,7 @@ Use these references for conversion and native development.
 | Android toolchain, back behavior, adaptive UI | [Android](references/android.md) |
 | Insets, system bars, keyboard, splash, accessibility | [Native UX](references/native-ux.md) |
 | Login, deep links, CORS, cookies, streaming | [Authentication and networking](references/auth-network.md) |
-| Plugins, permissions, files, persistence | [Native capabilities](references/native-capabilities.md) |
+| Plugin shortlist, catalogs, permissions, files | [Plugin selection](references/plugin-selection.md), [native capabilities](references/native-capabilities.md) |
 | Slow startup, bridge overhead, memory, release size | [Performance](references/performance.md) |
 | Supply chain, secrets, bridge exposure, privacy | [Security](references/security.md) |
 | Failures, testing, CI, signing, distribution, OTA | [Verification and release](references/verification.md) |

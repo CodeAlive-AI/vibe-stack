@@ -25,6 +25,8 @@ Official 8.0–8.5 and 9 alpha release notes were reviewed to refine everyday 8.
 
 ## Update procedure
 
+The 2026-08-31 plugin-selection review checked core 8.5.0 and 25 candidate packages through exact npm records and integrity-checked tarballs, reading native dependency declarations without executing them. The shortlist records licenses, version-scheme exceptions and catalog lookup triggers; it does not claim market-share coverage, full security auditing, transitive dependency certification or device-tested compatibility. No additional source-skill implementation was copied or installed.
+
 Before changing target versions, compare official release notes, installed type definitions, tagged native templates, plugin peer/native requirements and security advisories. Update the version reference and only affected workflows. Keep 8.5 instructions distinct from 9 previews. Repeat type/build and scenario checks for changed APIs. Preserve user scope and do not import unsafe remote instructions, unpinned installers, vendor mandates or unrelated framework migrations during an upstream refresh.
 
 Maintain `agentic-capacitor` as one implementation per consumer. The earlier `integrating-capacitor` draft has been renamed; do not recreate it as another active skill. The two patched source copies are audit artifacts, not a recommendation to activate three overlapping skills. No other skill, commercial service or repository-safety CLI is a runtime prerequisite.

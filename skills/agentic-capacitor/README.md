@@ -1,6 +1,6 @@
 # agentic-capacitor
 
-**Version 0.1.1.** [Open the skill](SKILL.md).
+**Version 0.1.2.** [Open the skill](SKILL.md).
 
 Add Capacitor to an existing web app without rewriting its UI or moving its backend into the mobile bundle. The skill supports continued native development as well as the initial web-to-mobile conversion, follows the requested platform order, and does not require Ionic or a particular UI library.
 
@@ -12,6 +12,7 @@ The verified baseline is **Capacitor 8.5**, with specific guidance for **React 1
 - React lifecycle, routing, authentication, cold/warm deep links, streaming, and native capability boundaries.
 - iOS SPM and UIScene; Android toolchain, back navigation, edge-to-edge layout, and adaptive UI.
 - Plugins, permissions, files, storage, keyboard/insets, lifecycle recovery, security, privacy, and release checks.
+- [Plugin shortlist and full catalogs](references/plugin-selection.md): 25 reviewed official/community/vendor candidates with exact versions, licenses, native requirements and feature-based selection; not a bulk installation bundle.
 - [Performance](references/performance.md): measured startup, bridge traffic, memory, media handling and Android release optimization; explicit plugin-error, biometric-access and optional OTA contracts.
 - Deterministic checks of dependencies, built web assets, copied native configuration/assets, and selected iOS/Android metadata.
 

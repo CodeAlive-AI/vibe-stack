@@ -2,6 +2,8 @@
 
 ## Choose and verify plugins
 
+For the common capability set, reviewed 8.5 candidates and when to search the wider ecosystem, read [plugin selection](plugin-selection.md). Versions and license/OS caveats live there to avoid divergent lists; it is not a mandatory installation bundle.
+
 Use browser functionality where it actually meets requirements. For native features check core and official plugins before adding dependencies; compare third-party options without assuming a vendor is mandatory. Record exact version, peer range, iOS/SPM/CocoaPods support, Android SDK/JDK requirements, Cordova dependency, maintenance, license, cost and privacy obligations. A compatible major is not proof every platform works.
 
 Inspect package metadata and relevant native code before installation. Sync the selected target, build it, and exercise the feature. `isPluginAvailable()` does not verify permissions or native SDK setup. For custom plugin work, inspect the official versioned Swift/Java/TypeScript plugin guides and validate argument types and trusted operations; do not expose arbitrary filesystem/network/native commands to the bridge. Source: [Plugin development](https://capacitorjs.com/docs/plugins/creating-plugins).

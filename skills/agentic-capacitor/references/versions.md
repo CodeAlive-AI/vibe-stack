@@ -31,6 +31,8 @@ For TypeScript 7, CLI 8.5's config-loader fix also depends on Node's native TS-l
 
 “Keep all plugins on latest 8.x” is not a valid blanket rule. Select supported, patched releases per plugin, including packages with different version schemes, and check native SDK and SPM compatibility. Do not infer safety from a release tag or the age of a release alone.
 
+The dated [plugin shortlist](plugin-selection.md) records exact candidates and exceptions for this 8.5 baseline. For example, File Transfer 2.0.5 and InAppBrowser 4.0.3 target Capacitor 8; InAppBrowser also raises Android minSdk to 26. Validate plugin requirements separately from core alignment. Broad npm peers and an SPM manifest are evidence to inspect, not proof of native builds or Capacitor 9 support.
+
 ## Evidence hierarchy
 
 Use installed public type definitions and native source for API signatures, tagged templates for generated project shape, and official migration guides for behavior changes. Check package registry metadata without installing packages merely to inspect them. Resolve conflicts by exact version; document remaining uncertainty. Do not let a future change of `latest` silently turn an 8.5 task into a 9 migration.
