@@ -41,6 +41,7 @@ When starting a new web app:
 13. Add Ultracite with Oxlint for linting and formatting.
 14. Add Motion only when the UI needs animation.
 15. Use Vibe Infra when the app needs deployment, database, error tracking, and observability defaults.
+16. Wire errors, traces, and logs as described in [Observability for AI-native apps](observability.md): the Sentry SDK and the OpenTelemetry `NodeSDK` start in Next's `instrumentation.ts`, browser errors go through a tunnel route, and Pino lines carry the trace id.
 
 ## Boundary
 

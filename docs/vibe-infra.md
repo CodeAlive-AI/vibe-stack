@@ -25,6 +25,8 @@ Structured logs are the default observability baseline for MVPs. Applications sh
 
 OpenObserve is the MVP+ observability upgrade. Instrument applications with OpenTelemetry and send logs, metrics, and traces to OpenObserve over OTLP when the project needs retention, dashboards, alerts, and cross-service correlation.
 
+[Observability for AI-native apps](observability.md) describes how to wire these tools together and which pitfalls to avoid. It covers one trace id across Bugsink, spans, and logs; readable stacks; browser errors through a tunnel; trace propagation from the page; and privacy by allowlist.
+
 For products with agents or LLM calls, use OpenObserve as the agent observability backend too. Trace the full execution path across model calls, tools, retrieval, workflows, and agent turns; preserve model, token, cost, latency, and error attributes needed to debug behavior and control spend. OpenObserve Online Evaluations can score spans, traces, or sessions with LLM judges or remote scorers, but it is an Enterprise feature and should not be assumed in an OSS deployment.
 
 ## Setup Direction For Agents
@@ -41,6 +43,7 @@ When preparing infrastructure:
 8. Add OpenObserve Online Evaluations only when the Enterprise feature is available and continuous quality scoring is a product requirement.
 9. Keep secrets in the deployment platform or host secret store. Do not commit them.
 10. Document deploy, rollback, log access, backup, restore, and telemetry investigation commands in the project README.
+11. Follow the [observability checklist](observability.md#checklist) and verify each signal by finding a real event in the sink, not by reading the config.
 
 ## MVP Logging Baseline
 

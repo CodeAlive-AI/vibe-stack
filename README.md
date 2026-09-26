@@ -41,8 +41,10 @@ It is designed for both a smooth fast start and long-running autonomous developm
 
 Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when traces, metrics, retention, and correlation become worth the extra resources. For agent products, send model, tool, retrieval, workflow, and agent-turn spans to the same OpenObserve backend; its built-in Online Evaluations are an optional Enterprise feature.
 
+How to wire errors, traces, and logs end to end — readable stacks, browser errors, one trace from the page to the database, privacy, model spend, and the pitfalls met in production — is in [Observability for AI-native apps](docs/observability.md).
+
 > **Full guides**
-> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
+> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Observability](docs/observability.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
 
 ## Coverage
 
@@ -51,6 +53,7 @@ Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when tra
 | TypeScript web apps | Covered |
 | Vibe Infra | Covered |
 | Common agent-ready practices | Covered |
+| Observability wiring (errors, traces, logs, model spend) | Covered |
 | Security practices | Covered |
 | Existing web apps to iOS/Android | [Capacitor 8.5 agent skill](skills/agentic-capacitor/README.md) |
 | Apple App Store submission review | [App Store reviewer skill](skills/apple-app-store-reviewer/README.md) |
@@ -76,6 +79,7 @@ Use this repo as a decision shortcut, not as a comparison catalog.
 - [TypeScript](docs/languages/typescript.md)
 - [Web application](docs/web-app.md)
 - [Vibe Infra](docs/vibe-infra.md)
+- [Observability for AI-native apps](docs/observability.md)
 - [Security Practices](docs/security-practices.md)
 - [Common guide](docs/common-guide.md)
 - [Agent skills](skills/README.md)
