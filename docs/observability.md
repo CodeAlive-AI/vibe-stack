@@ -257,7 +257,7 @@ Agent frameworks emit spans that copy state.
 
 ## 10. Close The Loop With Agents, Safely
 
-When a new Bugsink issue can start an autofix agent, the error stream becomes an agent input. Treat it like one.
+When a new Bugsink issue can start an autofix agent, the error stream becomes an agent input. Treat it like one. This section is the sandboxed variant, where a cloud agent sees only an allowlisted brief. The full-access variant, an agent on the production host, is in [Autonomous Bug Fixer](autonomous-bugfixer.md).
 
 - Build the agent's brief from an **allowlist**: issue id, counts, exception type and message passed through a scrubber (emails, tokens, long numbers, prose, quoted values masked), frame locations, and source lines of in-app files. Never include request data, locals, breadcrumbs, or code from `eval` frames.
 - Symbolicate first (practices 3 and 4). The agent should read `app/src/...:line`, not minified chunks.
