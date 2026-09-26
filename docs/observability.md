@@ -142,7 +142,7 @@ The tunnel route:
 4. Rewrites the envelope's DSN and posts one event item to `http://bugsink:8000/api/<project>/envelope/`.
 
 - **Pitfall: SDK defaults.** `@sentry/nextjs` quietly adds web vitals, sessions, and tracing, and breadcrumbs record clicks and console output. Use an allowlist of integrations, not a denylist.
-- **Pitfall: the tunnel is a public write endpoint.** Anyone can post a forged envelope. If issues start automated work (practice 8), a forged message becomes input to an agent. Require auth, rate-limit, and never trust the payload's shape.
+- **Pitfall: the tunnel is a public write endpoint.** Anyone can post a forged envelope. If issues start automated work (practice 10), a forged message becomes input to an agent. Require auth, rate-limit, and never trust the payload's shape.
 
 ## 5. One Trace From The Page To The Database
 
@@ -198,17 +198,64 @@ For AI features, the expensive questions are "why did this turn cost that much" 
 - Tag spans with what produced the answer: model id, prompt or corpus version. A bad answer then traces back to the revision that caused it.
 - **Pitfall:** a 245k-token turn was blamed on a tool's output ceiling. Its peak context was 36k. A limit says what *could* happen; the per-call breakdown says what *did*.
 
-## 8. Keep Agent Traces Affordable
+## 8. Trace And Log Agents Like Any Other Code Path
+
+An agent turn is a request with many steps: model calls, tool calls, guardrails, memory reads. Trace it inside the request's trace, under the same privacy rules. Answer "why was this answer wrong" with a separate development profile.
+
+```ts
+// mastra/index.ts — one Observability instance, two profiles
+const prod = {
+  serviceName: "app-agent",
+  bridge: new OtelBridge(),                        // agent spans join the active request span
+  exporters: [new OtelExporter({
+    provider: { custom: { endpoint: `${OPENOBSERVE_URL}/v1/traces`, protocol: "http/protobuf",
+                          headers: { Authorization: `Basic ${OPENOBSERVE_BASIC}` } } },
+    signals: { traces: true, logs: false },        // logs go through Pino only
+  })],
+  excludeSpanTypes: [SpanType.MODEL_CHUNK],        // practice 9
+  spanOutputProcessors: [errorPrivacy,
+    new SensitiveDataFilter({ sensitiveFields: [...SECRETS, ...IDENTITY, "content", "messages"] })],
+};
+const dev = {
+  serviceName: "app-agent",                        // no bridge: outside a request there is no span to join
+  exporters: [new FileExporter({ filePath: ".traces/mastra.jsonl" })],
+  excludeSpanTypes: env.TRACE_CHUNKS === "1" ? [] : [SpanType.MODEL_CHUNK],
+  includeInternalSpans: env.TRACE_INTERNAL === "1",
+  serializationOptions: { maxStringLength: 20_000, maxObjectKeys: 200, maxArrayLength: 200, maxDepth: 12 },
+  spanOutputProcessors: [errorPrivacy,
+    new SensitiveDataFilter({ sensitiveFields: [...SECRETS, ...IDENTITY] })],   // keeps the conversation
+};
+new Mastra({ agents, observability: new Observability({ configs: { default: isProd ? prod : dev } }) });
+
+// Keep the span's error status; drop the SDK's exception payload.
+const errorPrivacy: SpanOutputProcessor = {
+  name: "error-privacy",
+  process: (span) => { if (span?.errorInfo) span.errorInfo = { message: "Operation failed" }; return span; },
+  shutdown: async () => {},
+};
+```
+
+- **One trace per turn.** The OTel bridge makes `agent_run → model_step → tool_call` children of the HTTP span. The Bugsink event, the log lines, and the agent's steps then share one trace id. Without the bridge, agent spans land in separate traces that nothing joins to the request.
+- **Two profiles, chosen by one pure function.** An explicit `OBSERVABILITY_PROFILE` wins; otherwise `NODE_ENV=production` selects `prod`. A test pins the single intended difference: whether the conversation is kept. Default to recording. **Pitfall:** with no exporter configured in development, five benchmark runs were scored on an agent nobody could inspect.
+- **The dev exporter is an append-only JSONL file, written synchronously.** It needs no OpenObserve and no Postgres, it can be grepped, and it keeps the tail. A buffered exporter loses exactly the last spans of a run that dies mid-flight. Never use it on a hot path.
+- **Pitfall: cycle-safe serialization that erases data.** A `WeakSet` "seen" check marks any object reached twice as `[circular]`, for example the same tool result under both `toolCalls` and `toolResults`. Every tool result in a trace read `[circular]`. Detect cycles against the current ancestor path, not against everything already visited.
+- **Redact secrets and identity in every profile, dev included.** Dev databases hold real people often enough that "it is only local" is not a policy. Keep the conversation only in dev, then shape-audit what prod actually stores (practice 6: exporters rename fields past name-based filters).
+- **Mask exception payloads, keep the error class.** Provider SDK errors can carry the request body, which means the prompt. Keep status and a closed error code as attributes, so a masked "Operation failed" is still diagnosable.
+- **Keep the agent's request context to closed enums** (locale, role, attachment kind). Whatever sits in it can reach prompts, the cacheable prompt prefix, and spans. User fields never go there.
+- **Log agent events, not content,** through the app's Pino logger so every line carries `trace_id`: tool name, outcome, duration, sizes (a `transcript_chars` length, never the text). Turn off the framework's own log signal. Mastra's ships tool arguments (user queries) through a second, differently configured pipeline; keep one auditable log path.
+- **Count every paid call, including the framework's own.** A guardrail such as a moderation processor makes a model call and throws its usage away. Collect usage at the provider layer into a per-request ledger (`AsyncLocalStorage`) and write it to the database (practice 7). Otherwise part of the spend is invisible.
+- **Put quality next to errors.** Attach cheap deterministic scorers to agent runs, for example "does every citation name a real document", so a quality regression is queryable the way an exception is.
+
+## 9. Keep Agent Traces Affordable
 
 Agent frameworks emit spans that copy state.
 
 - **Streaming chunk spans carry the accumulated output,** so their total size grows quadratically with answer length. One benchmark episode wrote a 9.8 GB trace file with them on. Exclude `MODEL_CHUNK` spans by default, in production too.
 - **Internal workflow spans carry the whole workflow state.** One episode produced 416 internal spans totalling 380 MB, against 1.5 MB for the agent spans themselves. Keep them opt-in.
 - Health checks are traced like any request (one every 30 seconds adds up). Filter them if they drown the stream.
-- Turn off a framework's own log signal when it would ship tool arguments (user queries) through a second, differently configured pipeline. Keep one auditable log path.
 - Full sampling is fine for a product with few users. Revisit it when OpenObserve's ingest or disk says so, not before.
 
-## 9. Close The Loop With Agents, Safely
+## 10. Close The Loop With Agents, Safely
 
 When a new Bugsink issue can start an autofix agent, the error stream becomes an agent input. Treat it like one.
 
@@ -218,7 +265,7 @@ When a new Bugsink issue can start an autofix agent, the error stream becomes an
 - Resolve a dispatched issue after a grace period, so a fix that did not work comes back as a regression instead of going quiet.
 - Give the agent's environment what verification needs: the pinned runtime version and a container engine for database-backed tests. An agent that cannot run tests will push untested fixes.
 
-## 10. Verify On The Sink, Not On A Proxy
+## 11. Verify On The Sink, Not On A Proxy
 
 Most observability "works on my config" bugs survive because the check looked at something other than the stored data.
 
@@ -242,6 +289,8 @@ After every observability change, produce one real event of each kind and find i
 - [ ] `traceparent` flows browser → server. The server samples with `AlwaysOn` and ignores baggage.
 - [ ] Span attributes come from a tested allowlist. Stored values are shape-audited after every exporter change.
 - [ ] Per-call token and cost records exist. The cache triple is on spans, and absent stays absent.
+- [ ] Agent spans join the request trace through the OTel bridge. Dev writes a local JSONL trace; prod keeps no conversation and masks error payloads.
+- [ ] Per-call usage includes the framework's internal calls, such as guardrails.
 - [ ] Chunk and internal workflow spans are excluded in production.
 - [ ] Each change is verified by finding a real event in the sink.
 

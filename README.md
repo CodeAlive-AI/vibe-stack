@@ -41,7 +41,7 @@ It is designed for both a smooth fast start and long-running autonomous developm
 
 Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when traces, metrics, retention, and correlation become worth the extra resources. For agent products, send model, tool, retrieval, workflow, and agent-turn spans to the same OpenObserve backend; its built-in Online Evaluations are an optional Enterprise feature.
 
-How to wire errors, traces, and logs end to end — readable stacks, browser errors, one trace from the page to the database, privacy, model spend, and the pitfalls met in production — is in [Observability for AI-native apps](docs/observability.md).
+How to wire errors, traces, and logs end to end — readable stacks, browser errors, one trace from the page to the database, agent tracing and logging, privacy, model spend, and the pitfalls met in production — is in [Observability for AI-native apps](docs/observability.md).
 
 > **Full guides**
 > Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Observability](docs/observability.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
