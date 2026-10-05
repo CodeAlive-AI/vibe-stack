@@ -44,7 +44,7 @@ Start with structured logs and Bugsink. Add OpenTelemetry + OpenObserve when tra
 How to wire errors, traces, and logs end to end — readable stacks, browser errors, one trace from the page to the database, agent tracing and logging, privacy, model spend, and the pitfalls met in production — is in [Observability for AI-native apps](docs/observability.md). Turning that error stream into an agent that fixes and deploys on its own is in [Autonomous Bug Fixer](docs/autonomous-bugfixer.md).
 
 > **Full guides**
-> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Observability](docs/observability.md), [Autonomous Bug Fixer](docs/autonomous-bugfixer.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
+> Detailed docs: [Web application](docs/web-app.md), [TypeScript](docs/languages/typescript.md), [Vibe Infra](docs/vibe-infra.md), [Observability](docs/observability.md), [Autonomous Bug Fixer](docs/autonomous-bugfixer.md), [Contact Mail To Telegram](docs/mail-to-telegram.md), [Security Practices](docs/security-practices.md), and [Common guide](docs/common-guide.md).
 
 ## Coverage
 
@@ -80,6 +80,7 @@ Use this repo as a decision shortcut, not as a comparison catalog.
 - [Web application](docs/web-app.md)
 - [Vibe Infra](docs/vibe-infra.md)
 - [Observability for AI-native apps](docs/observability.md)
+- [Contact Mail To Telegram](docs/mail-to-telegram.md)
 - [Security Practices](docs/security-practices.md)
 - [Common guide](docs/common-guide.md)
 - [Agent skills](skills/README.md)
